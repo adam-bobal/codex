@@ -1,0 +1,75 @@
+---
+project: marketing
+type: Text
+category: documentation
+tags: analysis, command-line, scripting
+description: months = 12
+created: 2025-12-31T04:12:38.368001
+---
+
+# custom projection script
+
+import pandas as pd
+import os
+
+# === Input parameters ===
+months           = 12
+ad_budget_month  = 600      # $ you plan to spend on ads per month
+avg_CPC          = 2.8       # $ per click (from our keyword analysis)
+conversion_rate  = 0.02      # 2% of clicks turn into orders
+
+avg_revenue      = 5000      # $ per job
+hours_per_job    = 24        # your shop hours/job
+hours_capacity   = 40 * 4.3  # 40 h/week × 4.3 weeks ≈ 172 h/mo
+capacity_jobs    = int(hours_capacity // hours_per_job)  # max jobs you can run
+
+# === derive monthly demand from ad economics ===
+monthly_clicks       = ad_budget_month / avg_CPC
+monthly_demand_jobs  = int(monthly_clicks * conversion_rate)
+
+# === build the forecast ===
+rows = []
+design_pipeline = []
+build_backlog = jobs_in_build_last_month = 0
+
+for month in range(1, months + 1):
+    # 1. new orders from marketing
+    new_orders = monthly_demand_jobs
+    design_pipeline.append(new_orders)
+
+    # 2. after 2-month design lag, move into build queue
+    if len(design_pipeline) > 2:
+        build_backlog += design_pipeline[-3]
+
+    # 3. start as many builds as capacity allows
+    jobs_started = min(capacity_jobs, build_backlog)
+    build_backlog -= jobs_started
+
+    # 4. complete the ones you started last month
+    jobs_completed = jobs_in_build_last_month
+    jobs_in_build_last_month = jobs_started
+
+    # 5. cash: 50% upfront deposit at start, 50% on completion
+    deposit_cash = jobs_started   * avg_revenue * 0.5
+    final_cash   = jobs_completed * avg_revenue * 0.5
+    total_cash   = deposit_cash + final_cash
+
+    rows.append([
+        month, new_orders, build_backlog,
+        jobs_started, jobs_completed,
+        deposit_cash, final_cash, total_cash
+    ])
+
+# === assemble DataFrame ===
+cols = [
+    "Month", "New Orders", "Build Backlog End",
+    "Jobs Started", "Jobs Completed",
+    "Deposit Cash ($)", "Final Cash ($)", "Cash In ($)"
+]
+df = pd.DataFrame(rows, columns=cols)
+
+# === save to CSV ===
+file_path = r"C:\users\aboba\documents\projects\three_month_cash_flow_projection.csv"
+df.to_csv(file_path, index=False)
+
+print(f"Forecast saved to {file_path}")

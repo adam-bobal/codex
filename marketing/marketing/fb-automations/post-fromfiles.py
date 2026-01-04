@@ -1,0 +1,27 @@
+import os
+import requests
+
+PAGE_ID           = '115464798312582'
+PAGE_ACCESS_TOKEN = 'EAAJDT6HZCIOEBPFLeLNIWjayVAomNcP9A0khb6pdyjZB1SlCynVvZAtjvZA2DXu1MiPZCS21ZC9GlFkSqrOxZB42oHON4yh4iZB1ss36ujfVB8XyQSG8poZABVOAt0HUfHaUwhCB1Mmab4AdIKi29MVAQZAuMo0FC1zVvz6QSIj9hNalUmb9Sat1NVtFyLJsLxfrRsW0eCefS52uyjDR75F7PXJ3w6MlR5F6fVPsUZD'
+IMAGE_PATH       = r"C:\Users\aboba\projects\fb-automations\images\waterice_dailyflavor\thur_rainbow.png"
+
+# Read the caption text from a file
+COMMENT_FILE = r"C:\Users\aboba\projects\fb-automations\comments\thur_rainbow.txt"
+if not os.path.exists(COMMENT_FILE):
+    raise FileNotFoundError(f"Comment file not found: {COMMENT_FILE}")
+with open(COMMENT_FILE, 'r', encoding='utf-8') as f:
+    message = f.read().strip()
+
+# Use the /photos edge to upload a file
+url = f'https://graph.facebook.com/v19.0/{PAGE_ID}/photos'
+
+files = {
+    'source': open(IMAGE_PATH, 'rb')
+}
+data = {
+    'caption': message,
+    'access_token': PAGE_ACCESS_TOKEN
+}
+
+response = requests.post(url, files=files, data=data)
+print(response.json())

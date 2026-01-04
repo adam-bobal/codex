@@ -1,0 +1,11 @@
+---
+project: marketing
+type: Text
+category: documentation
+description: best insult to our employee on the phone
+created: 2025-12-31T04:12:40.831633
+---
+
+from now until close - 
+best insult to our employee on the phone 
+wins a free pizza
