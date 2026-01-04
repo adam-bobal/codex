@@ -1,0 +1,2491 @@
+---
+project: marketing
+type: HTML
+category: web
+tags: data
+description: <!DOCTYPE html>
+created: 2025-12-31T04:12:38.364087
+---
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Market Research Data Sources</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="adword-research_python_files/libs/clipboard/clipboard.min.js"></script>
+<script src="adword-research_python_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="adword-research_python_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="adword-research_python_files/libs/quarto-html/popper.min.js"></script>
+<script src="adword-research_python_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="adword-research_python_files/libs/quarto-html/anchor.min.js"></script>
+<link href="adword-research_python_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="adword-research_python_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="adword-research_python_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="adword-research_python_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="adword-research_python_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Market Research Data Sources</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="industry-reports-analytics" class="level2">
+<h2 class="anchored" data-anchor-id="industry-reports-analytics">Industry Reports &amp; Analytics</h2>
+<div id="ceb4f9ec" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Google Trends for woodworking demand</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pytrends.request <span class="im">import</span> TrendReq</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_woodworking_trends():</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    pytrends <span class="op">=</span> TrendReq(hl<span class="op">=</span><span class="st">'en-US'</span>, tz<span class="op">=</span><span class="dv">360</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Woodworking-related keywords</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    keywords <span class="op">=</span> [<span class="st">'custom furniture'</span>, <span class="st">'woodworking'</span>, <span class="st">'handmade furniture'</span>, </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>               <span class="st">'live edge table'</span>, <span class="st">'custom cabinets'</span>]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    pytrends.build_payload(keywords, timeframe<span class="op">=</span><span class="st">'today 12-m'</span>, geo<span class="op">=</span><span class="st">'US'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get interest over time</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    trends_data <span class="op">=</span> pytrends.interest_over_time()</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get related queries</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    related_queries <span class="op">=</span> pytrends.related_queries()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> trends_data, related_queries</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>trends, queries <span class="op">=</span> analyze_woodworking_trends()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/home/lubuntu/myenv/lib/python3.12/site-packages/pytrends/request.py:260: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  df = df.fillna(False)</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[4]</span><span class="ansi-green-fg">, line 21</span>
+<span class="ansi-green-fg">     17</span>     related_queries = pytrends.related_queries()
+<span class="ansi-green-fg">     19</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> trends_data, related_queries
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">21</span> trends, queries = <span class="ansi-yellow-bg">analyze_woodworking_trends</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[4]</span><span class="ansi-green-fg">, line 17</span>, in <span class="ansi-cyan-fg">analyze_woodworking_trends</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">     14</span> trends_data = pytrends.interest_over_time()
+<span class="ansi-green-fg">     16</span> <span style="font-style:italic;color:rgb(95,135,135)"># Get related queries</span>
+<span class="ansi-green-fg">---&gt; </span><span class="ansi-green-fg">17</span> related_queries = <span class="ansi-yellow-bg">pytrends</span><span class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">related_queries</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">     19</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> trends_data, related_queries
+
+<span class="ansi-cyan-fg">File </span><span class="ansi-green-fg">~/myenv/lib/python3.12/site-packages/pytrends/request.py:450</span>, in <span class="ansi-cyan-fg">TrendReq.related_queries</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-fg">    447</span> <span style="font-style:italic;color:rgb(95,135,135)"># top queries</span>
+<span class="ansi-green-fg">    448</span> <span style="font-weight:bold;color:rgb(0,135,0)">try</span>:
+<span class="ansi-green-fg">    449</span>     top_df = pd.DataFrame(
+<span class="ansi-green-fg">--&gt; </span><span class="ansi-green-fg">450</span>         <span class="ansi-yellow-bg">req_json</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-fg ansi-yellow-bg">default</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-fg ansi-yellow-bg">rankedList</span><span class="ansi-yellow-fg ansi-yellow-bg">'</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">[</span><span class="ansi-green-fg ansi-yellow-bg">0</span><span class="ansi-yellow-bg">]</span>[<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">rankedKeyword</span><span class="ansi-yellow-fg">'</span>])
+<span class="ansi-green-fg">    451</span>     top_df = top_df[[<span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">query</span><span class="ansi-yellow-fg">'</span>, <span class="ansi-yellow-fg">'</span><span class="ansi-yellow-fg">value</span><span class="ansi-yellow-fg">'</span>]]
+<span class="ansi-green-fg">    452</span> <span style="font-weight:bold;color:rgb(0,135,0)">except</span> <span style="font-weight:bold;color:rgb(215,95,95)">KeyError</span>:
+<span class="ansi-green-fg">    453</span>     <span style="font-style:italic;color:rgb(95,135,135)"># in case no top queries are found, the lines above will throw a KeyError</span>
+
+<span class="ansi-red-fg">IndexError</span>: list index out of range</pre>
+</div>
+</div>
+</div>
+<section id="anthropic-attempted-fix" class="level3">
+<h3 class="anchored" data-anchor-id="anthropic-attempted-fix">Anthropic Attempted Fix</h3>
+<div id="e88f97d9" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pytrends.request <span class="im">import</span> TrendReq</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_woodworking_trends():</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Initialize with different settings</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        pytrends <span class="op">=</span> TrendReq(hl<span class="op">=</span><span class="st">'en-US'</span>, tz<span class="op">=</span><span class="dv">360</span>, timeout<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">25</span>), retries<span class="op">=</span><span class="dv">2</span>, backoff_factor<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Use fewer keywords (max 5 per request)</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        keywords <span class="op">=</span> [<span class="st">'custom furniture'</span>, <span class="st">'woodworking'</span>, <span class="st">'handmade furniture'</span>]</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Add random delay to avoid rate limiting</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        time.sleep(random.uniform(<span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Building payload..."</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        pytrends.build_payload(keywords, timeframe<span class="op">=</span><span class="st">'today 12-m'</span>, geo<span class="op">=</span><span class="st">'US'</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Getting interest over time..."</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        trends_data <span class="op">=</span> pytrends.interest_over_time()</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Add delay before next request</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        time.sleep(random.uniform(<span class="dv">2</span>, <span class="dv">4</span>))</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Getting related queries..."</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>        related_queries <span class="op">=</span> pytrends.related_queries()</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> trends_data, related_queries</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Error: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Trying alternative approach..."</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> analyze_with_smaller_batches()</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_with_smaller_batches():</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Alternative approach with individual keyword analysis"""</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    pytrends <span class="op">=</span> TrendReq(hl<span class="op">=</span><span class="st">'en-US'</span>, tz<span class="op">=</span><span class="dv">360</span>, timeout<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">25</span>), retries<span class="op">=</span><span class="dv">2</span>, backoff_factor<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    keywords <span class="op">=</span> [<span class="st">'woodworking'</span>, <span class="st">'custom furniture'</span>, <span class="st">'handmade furniture'</span>]</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    all_data <span class="op">=</span> {}</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> keyword <span class="kw">in</span> keywords:</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Analyzing: </span><span class="sc">{</span>keyword<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>            time.sleep(random.uniform(<span class="dv">2</span>, <span class="dv">4</span>))  <span class="co"># Longer delay between requests</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>            pytrends.build_payload([keyword], timeframe<span class="op">=</span><span class="st">'today 12-m'</span>, geo<span class="op">=</span><span class="st">'US'</span>)</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>            trends <span class="op">=</span> pytrends.interest_over_time()</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> trends.empty:</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>                all_data[keyword] <span class="op">=</span> trends[keyword]</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Failed for </span><span class="sc">{</span>keyword<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> all_data:</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>        combined_df <span class="op">=</span> pd.DataFrame(all_data)</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> combined_df, <span class="va">None</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">None</span>, <span class="va">None</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the analysis</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Starting woodworking trends analysis..."</span>)</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>trends, queries <span class="op">=</span> analyze_woodworking_trends()</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> trends <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="kw">and</span> <span class="kw">not</span> trends.empty:</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">=== TRENDS DATA ==="</span>)</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(trends.head())</span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Shape: </span><span class="sc">{</span>trends<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> queries:</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">=== RELATED QUERIES ==="</span>)</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> keyword, query_data <span class="kw">in</span> queries.items():</span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>keyword<span class="sc">.</span>upper()<span class="sc">}</span><span class="ss">:"</span>)</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> query_data[<span class="st">'top'</span>] <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="st">"Top queries:"</span>)</span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(query_data[<span class="st">'top'</span>].head())</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"No data retrieved. Google Trends might be blocking requests."</span>)</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Try again later or use a different approach."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Starting woodworking trends analysis...
+Building payload...
+Error: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+Trying alternative approach...
+Analyzing: woodworking
+Failed for woodworking: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+Analyzing: custom furniture
+Failed for custom furniture: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+Analyzing: handmade furniture
+Failed for handmade furniture: Retry.__init__() got an unexpected keyword argument 'method_whitelist'
+No data retrieved. Google Trends might be blocking requests.
+Try again later or use a different approach.</code></pre>
+</div>
+</div>
+</section>
+<section id="google-fix" class="level3">
+<h3 class="anchored" data-anchor-id="google-fix">Google Fix</h3>
+<div id="64c391f7" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Google Trends for woodworking demand</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pytrends.request <span class="im">import</span> TrendReq</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time <span class="co"># Import the time module to pause between requests</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_woodworking_trends():</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Analyzes Google Trends for woodworking keywords.</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">    Fetches interest over time for a list of keywords and then fetches</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">    related queries for each keyword individually.</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">        pd.DataFrame: A DataFrame containing interest over time data.</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">        dict: A dictionary containing related queries for each keyword.</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    pytrends <span class="op">=</span> TrendReq(hl<span class="op">=</span><span class="st">'en-US'</span>, tz<span class="op">=</span><span class="dv">360</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Woodworking-related keywords</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    keywords <span class="op">=</span> [<span class="st">'custom furniture'</span>, <span class="st">'woodworking'</span>, <span class="st">'handmade furniture'</span>, </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>               <span class="st">'live edge table'</span>, <span class="st">'custom cabinets'</span>]</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 1. Get Interest Over Time for all keywords (for comparison) ---</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Fetching interest over time for all keywords..."</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    pytrends.build_payload(keywords, timeframe<span class="op">=</span><span class="st">'today 12-m'</span>, geo<span class="op">=</span><span class="st">'US'</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    trends_data <span class="op">=</span> pytrends.interest_over_time()</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --- 2. Get Related Queries for each keyword individually ---</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    related_queries_dict <span class="op">=</span> {}</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Fetching related queries for each keyword..."</span>)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> keyword <span class="kw">in</span> keywords:</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Fetching for: '</span><span class="sc">{</span>keyword<span class="sc">}</span><span class="ss">'"</span>)</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Build a new payload for each individual keyword</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>        pytrends.build_payload([keyword], timeframe<span class="op">=</span><span class="st">'today 12-m'</span>, geo<span class="op">=</span><span class="st">'US'</span>)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Add a small delay to avoid making requests too quickly</span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="dv">1</span>) </span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>            related_queries_dict[keyword] <span class="op">=</span> pytrends.related_queries()</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Could not fetch related queries for '</span><span class="sc">{</span>keyword<span class="sc">}</span><span class="ss">'. Error: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>            related_queries_dict[keyword] <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> trends_data, related_queries_dict</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the analysis</span></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>trends_df, related_queries <span class="op">=</span> analyze_woodworking_trends()</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Display the results ---</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">--- Interest Over Time ---"</span>)</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(trends_df.tail()) <span class="co"># Print the last 5 rows of the trend data</span></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n\n</span><span class="st">--- Related Queries ---"</span>)</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> keyword, queries <span class="kw">in</span> related_queries.items():</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> queries:</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Top Related Queries for '</span><span class="sc">{</span>keyword<span class="sc">}</span><span class="ss">':"</span>)</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>        <span class="co"># The result is a dictionary where the value is another dictionary with 'top' and 'rising'</span></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>        top_queries <span class="op">=</span> queries[keyword][<span class="st">'top'</span>]</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> top_queries <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="kw">and</span> <span class="kw">not</span> top_queries.empty:</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(top_queries)</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"No top related queries found."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Fetching interest over time for all keywords...</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/home/lubuntu/myenv/lib/python3.12/site-packages/pytrends/request.py:260: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  df = df.fillna(False)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Fetching related queries for each keyword...
+Fetching for: 'custom furniture'
+Could not fetch related queries for 'custom furniture'. Error: list index out of range
+Fetching for: 'woodworking'
+Could not fetch related queries for 'woodworking'. Error: list index out of range
+Fetching for: 'handmade furniture'
+Could not fetch related queries for 'handmade furniture'. Error: list index out of range
+Fetching for: 'live edge table'
+Could not fetch related queries for 'live edge table'. Error: list index out of range
+Fetching for: 'custom cabinets'
+Could not fetch related queries for 'custom cabinets'. Error: list index out of range
+
+--- Interest Over Time ---
+            custom furniture  woodworking  handmade furniture  \
+date                                                            
+2025-06-01                10           70                   1   
+2025-06-08                12           68                   1   
+2025-06-15                10           71                   1   
+2025-06-22                10           73                   1   
+2025-06-29                11           66                   1   
+
+            live edge table  custom cabinets  isPartial  
+date                                                     
+2025-06-01                5               15      False  
+2025-06-08                4               15      False  
+2025-06-15                5               15      False  
+2025-06-22                5               15      False  
+2025-06-29                5               13       True  
+
+
+--- Related Queries ---</code></pre>
+</div>
+</div>
+<section id="google-response-to-broken-api-endpoint" class="level4">
+<h4 class="anchored" data-anchor-id="google-response-to-broken-api-endpoint">Google Response to Broken API Endpoint</h4>
+<pre><code> ```</code></pre>
+</section>
+</section>
+</section>
+<section id="google-trends-for-woodworking-demand" class="level1">
+<h1>Google Trends for woodworking demand</h1>
+<p>from pytrends.request import TrendReq</p>
+<p>def analyze_woodworking_trends():</p>
+<p>pytrends = TrendReq(hl=‘en-US’, tz=360)</p>
+</section>
+<section id="woodworking-related-keywords" class="level1">
+<h1>Woodworking-related keywords</h1>
+<p>keywords = [‘custom furniture’, ‘woodworking’, ‘handmade furniture’,</p>
+<p>‘live edge table’, ‘custom cabinets’]</p>
+<p>pytrends.build_payload(keywords, timeframe=‘today 12-m’, geo=‘US’)</p>
+</section>
+<section id="get-interest-over-time" class="level1">
+<h1>Get interest over time</h1>
+<p>trends_data = pytrends.interest_over_time()</p>
+</section>
+<section id="get-related-queries" class="level1">
+<h1>Get related queries</h1>
+<p>related_queries = pytrends.related_queries()</p>
+<p>return trends_data, related_queries</p>
+<p>trends, queries = analyze_woodworking_trends()</p>
+<pre><code>
+
+/home/lubuntu/myenv/lib/python3.12/site-packages/pytrends/request.py:260: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+
+df = df.fillna(False)
+
+
+---------------------------------------------------------------------------
+
+IndexError Traceback (most recent call last)
+
+Cell In[4], line 21
+
+17 related_queries = pytrends.related_queries()
+
+19 return trends_data, related_queries
+
+---&gt; 21 trends, queries = analyze_woodworking_trends()
+
+Cell In[4], line 17, in analyze_woodworking_trends()
+
+14 trends_data = pytrends.interest_over_time()
+
+16 # Get related queries
+
+---&gt; 17 related_queries = pytrends.related_queries()
+
+19 return trends_data, related_queries
+
+File ~/myenv/lib/python3.12/site-packages/pytrends/request.py:450, in TrendReq.related_queries(self)
+
+447 # top queries
+
+448 try:
+
+449 top_df = pd.DataFrame(
+
+--&gt; 450 req_json['default']['rankedList'][0]['rankedKeyword'])
+
+451 top_df = top_df[['query', 'value']]
+
+452 except KeyError:
+
+453 # in case no top queries are found, the lines above will throw a KeyError
+
+IndexError: list index out of range
+
+Outline
+
+    Diagnosis of the IndexError: An explanation of why the IndexError: list index out of range occurs when using related_queries() with multiple keywords.
+
+    The Solution: A description of the correct approach, which involves iterating through each keyword to fetch its related queries individually.
+
+    Corrected Python Code: A complete, runnable code snippet that implements the solution and correctly fetches both interest over time for all keywords and related queries for each keyword.
+
+    Explanation of Changes: A step-by-step breakdown of the modifications made to the original code.
+
+    A Note on the FutureWarning: A brief explanation of the warning message appearing in the output.
+
+1. Diagnosis of the IndexError
+
+Hello! I can help you with this Python error. The IndexError: list index out of range you're encountering is a common issue when using the pytrends library.
+
+The root cause of the problem is that the pytrends.related_queries() method is designed to fetch data for only one keyword at a time.
+
+In your original code, you build a single payload with a list of five keywords:
+pytrends.build_payload(keywords, ...)
+
+While interest_over_time() can handle multiple keywords to generate a comparison chart, related_queries() cannot. When it receives a payload with more than one keyword, the Google Trends API returns a data structure that pytrends doesn't expect. Specifically, the list that should contain the related query data (rankedList) comes back empty. The library then tries to access the first element of this empty list ([0]), which triggers the IndexError.
+
+2. The Solution
+
+To fix this, you need to separate the logic for fetching "interest over time" and "related queries."
+
+    Interest Over Time: You can continue to fetch this data in a single call with all your keywords to get a comparison.
+
+    Related Queries: You must loop through your list of keywords and make a separate API call for each one. You can store the results in a dictionary where the keys are your keywords and the values are the corresponding related queries.
+
+3. Corrected Python Code
+
+Here is the corrected and complete code. This version first gets the comparison data for all keywords and then iterates through each keyword to safely get its related queries.
+Python
+
+# Google Trends for woodworking demand
+import pandas as pd
+from pytrends.request import TrendReq
+import time # Import the time module to pause between requests
+
+def analyze_woodworking_trends():
+    """
+    Analyzes Google Trends for woodworking keywords.
+
+    Fetches interest over time for a list of keywords and then fetches
+    related queries for each keyword individually.
+
+    Returns:
+        pd.DataFrame: A DataFrame containing interest over time data.
+        dict: A dictionary containing related queries for each keyword.
+    """
+    pytrends = TrendReq(hl='en-US', tz=360)
+    
+    # Woodworking-related keywords
+    keywords = ['custom furniture', 'woodworking', 'handmade furniture', 
+               'live edge table', 'custom cabinets']
+    
+    # --- 1. Get Interest Over Time for all keywords (for comparison) ---
+    print("Fetching interest over time for all keywords...")
+    pytrends.build_payload(keywords, timeframe='today 12-m', geo='US')
+    trends_data = pytrends.interest_over_time()
+    
+    # --- 2. Get Related Queries for each keyword individually ---
+    related_queries_dict = {}
+    print("\nFetching related queries for each keyword...")
+    
+    for keyword in keywords:
+        print(f"Fetching for: '{keyword}'")
+        # Build a new payload for each individual keyword
+        pytrends.build_payload([keyword], timeframe='today 12-m', geo='US')
+        
+        # Add a small delay to avoid making requests too quickly
+        time.sleep(1) 
+        
+        try:
+            related_queries_dict[keyword] = pytrends.related_queries()
+        except Exception as e:
+            print(f"Could not fetch related queries for '{keyword}'. Error: {e}")
+            related_queries_dict[keyword] = None
+
+    return trends_data, related_queries_dict
+
+# Run the analysis
+trends_df, related_queries = analyze_woodworking_trends()
+
+# --- Display the results ---
+print("\n--- Interest Over Time ---")
+print(trends_df.tail()) # Print the last 5 rows of the trend data
+
+print("\n\n--- Related Queries ---")
+for keyword, queries in related_queries.items():
+    if queries:
+        print(f"\nTop Related Queries for '{keyword}':")
+        # The result is a dictionary where the value is another dictionary with 'top' and 'rising'
+        top_queries = queries[keyword]['top']
+        if top_queries is not None and not top_queries.empty:
+            print(top_queries)
+        else:
+            print("No top related queries found.")
+
+4. Explanation of Changes
+
+    Separate API Calls: The core logic is now split. The call to get interest_over_time remains as it was, using the full list of keywords.
+
+    Loop for Related Queries: A for loop iterates through your keywords list.
+
+    Single-Keyword Payload: Inside the loop, pytrends.build_payload([keyword], ...) is called. Note that keyword is enclosed in square brackets [] because the method expects a list, even if it's just a list containing one item.
+
+    Storing Results: The results from pytrends.related_queries() are stored in a dictionary called related_queries_dict. This is a clean way to associate each keyword with its specific results.
+
+    Error Handling &amp; Delay:
+
+        time.sleep(1): A one-second pause is added in the loop. It's good practice to add a small delay between API calls to avoid being rate-limited or blocked by Google for making too many requests too quickly.
+
+        try...except: I've wrapped the related_queries() call in a try...except block. This makes the code more robust. If Google Trends has no related query data for a specific term, it might still cause an error, and this block will catch it, print a message, and allow the script to continue to the next keyword instead of crashing.
+
+5. A Note on the FutureWarning
+
+You may still see this warning in your output:
+FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated...
+
+This warning is not causing your IndexError. It originates from the pandas library, which pytrends uses internally. It's simply informing you that a function pandas uses will behave differently in a future version. This is a message for the developers of pytrends to address in a future update. You can safely ignore this warning as it does not affect the execution or results of your code.
+
+
+Fetching related queries for each keyword...
+
+Fetching for: 'custom furniture'
+
+Could not fetch related queries for 'custom furniture'. Error: list index out of range
+
+Fetching for: 'woodworking'
+
+Could not fetch related queries for 'woodworking'. Error: list index out of range
+
+Fetching for: 'handmade furniture'
+
+Could not fetch related queries for 'handmade furniture'. Error: list index out of range
+
+Fetching for: 'live edge table'
+
+Could not fetch related queries for 'live edge table'. Error: list index out of range
+
+Fetching for: 'custom cabinets'
+
+Could not fetch related queries for 'custom cabinets'. Error: list index out of range
+
+
+--- Interest Over Time ---
+
+custom furniture woodworking handmade furniture \
+
+date
+
+2025-06-01 10 70 1
+
+2025-06-08 12 68 1
+
+2025-06-15 10 71 1
+
+2025-06-22 10 73 1
+
+2025-06-29 11 66 1
+
+
+live edge table custom cabinets isPartial
+
+date
+
+2025-06-01 5 15 False
+
+2025-06-08 4 15 False
+
+2025-06-15 5 15 False
+
+2025-06-22 5 15 False
+
+2025-06-29 5 13 True
+
+
+
+--- Related Queries ---
+
+
+You've run into a frustrating and unfortunately common issue with the pytrends library. Your new output confirms that the error isn't just about sending multiple keywords at once, but is a more fundamental problem with the related_queries() function itself.
+
+Let's break down what's happening and how to build a more robust script to handle it.
+
+Outline
+
+    Diagnosis of the Persistent Error: An explanation of why the IndexError continues to happen even with single keywords, pointing to an issue within the pytrends library itself.
+
+    The Fragility of Unofficial Wrappers: A brief look at why libraries like pytrends can sometimes break.
+
+    Robust Solution: A revised code block that anticipates these errors and safely handles the data that is returned, preventing crashes and extracting whatever information is available.
+
+    Interpreting the New Results: How to understand the output from the robust script.
+
+1. Diagnosis of the Persistent Error
+
+The fact that you are now getting the IndexError: list index out of range for every single keyword tells us the problem lies within the pytrends library's ability to parse the response it's getting from Google.
+
+Here's the situation:
+
+    You send a valid request for a single keyword (e.g., 'woodworking').
+
+    Google Trends sends back a response.
+
+    The structure of this response has likely changed slightly from what the pytrends library was originally designed to expect.
+
+    When the related_queries() method tries to find the data in the specific location it's hard-coded to look (req_json['default']['rankedList'][0]), it finds an empty list ([]) and crashes when it tries to get the first item ([0]).
+
+This happens even when there are related queries visible on the Google Trends website. The issue is purely in the parsing step within the library.
+
+2. The Fragility of Unofficial Wrappers
+
+pytrends is an unofficial "wrapper" library. It works by mimicking a web browser to scrape the Google Trends website and access its internal API. This is a brilliant but fragile approach. If Google changes the backend structure of their website or API—even slightly—the library can break until its developers release a new version that accounts for the change. You appear to have caught it during one of these broken periods.
+
+3. Robust Solution
+
+We cannot fix the pytrends library itself, but we can write our Python code to be more defensive. The goal is to successfully call the function and then carefully inspect whatever data we get back, rather than assuming it's in the correct format.
+
+The code below is designed to handle this IndexError gracefully. It attempts the call and then safely checks the structure of the returned dictionary before trying to extract the 'top' and 'rising' queries.
+Python
+
+# Google Trends for woodworking demand
+import pandas as pd
+from pytrends.request import TrendReq
+import time
+
+def analyze_woodworking_trends():
+    """
+    Analyzes Google Trends for woodworking keywords.
+
+    This robust version anticipates potential errors from the pytrends library
+    and handles them gracefully.
+    """
+    pytrends = TrendReq(hl='en-US', tz=360)
+    
+    keywords = ['custom furniture', 'woodworking', 'handmade furniture', 
+               'live edge table', 'custom cabinets']
+    
+    # --- 1. Get Interest Over Time (this part usually works reliably) ---
+    print("Fetching interest over time for all keywords...")
+    try:
+        pytrends.build_payload(keywords, timeframe='today 12-m', geo='US')
+        trends_data = pytrends.interest_over_time()
+    except Exception as e:
+        print(f"Could not fetch interest over time. Error: {e}")
+        trends_data = None
+    
+    # --- 2. Get Related Queries with Robust Error Handling ---
+    related_queries_dict = {}
+    print("\nFetching related queries for each keyword...")
+    
+    for keyword in keywords:
+        print(f"Fetching for: '{keyword}'")
+        time.sleep(2) # Increased delay to be safe
+        
+        try:
+            # Re-build payload for each keyword
+            pytrends.build_payload([keyword], timeframe='today 12-m', geo='US')
+            related_queries_dict[keyword] = pytrends.related_queries()
+        except IndexError:
+            # This is the specific error we are seeing.
+            print(f"  &gt; Caught IndexError. Google's API response is not in the expected format for '{keyword}'.")
+            related_queries_dict[keyword] = None # Mark as failed
+        except Exception as e:
+            # Catch any other potential errors
+            print(f"  &gt; An unexpected error occurred for '{keyword}': {e}")
+            related_queries_dict[keyword] = None # Mark as failed
+            
+    return trends_data, related_queries_dict
+
+# --- Run the analysis and display results safely ---
+trends_df, related_queries = analyze_woodworking_trends()
+
+if trends_df is not None:
+    print("\n\n--- Interest Over Time ---")
+    print(trends_df.tail())
+else:
+    print("\n\n--- No Interest Over Time data was fetched ---")
+
+print("\n\n--- Related Queries ---")
+if not related_queries:
+    print("No related queries could be fetched.")
+else:
+    for keyword, result in related_queries.items():
+        print(f"\n--- Results for '{keyword}' ---")
+        if result is None:
+            print("  &gt; No data returned due to an API parsing error.")
+            continue
+        
+        # Safely access 'top' and 'rising' queries
+        top_queries = result.get(keyword, {}).get('top')
+        rising_queries = result.get(keyword, {}).get('rising')
+        
+        if top_queries is not None and not top_queries.empty:
+            print("\n  Top Related Queries:")
+            print(top_queries)
+        else:
+            print("\n  &gt; No 'Top' related queries were found or could be parsed.")
+            
+        if rising_queries is not None and not rising_queries.empty:
+            print("\n  Rising Related Queries:")
+            print(rising_queries)
+        else:
+            print("\n  &gt; No 'Rising' related queries were found or could be parsed.")
+
+4. Interpreting the New Results
+
+When you run this new script, you will likely see a similar output to what you got before, but with more descriptive messages:
+Plaintext
+
+Fetching for: 'custom furniture'
+  &gt; Caught IndexError. Google's API response is not in the expected format for 'custom furniture'.
+... (and so on for other keywords)
+
+At the end, the results section will clearly state that no data could be parsed.
+
+What to do now?
+
+    Wait for an Update: The most common solution is to wait for the pytrends developers to patch the library. You can check for updates periodically by running pip install --upgrade pytrends.
+
+    Try Different Parameters: You can experiment by changing the timeframe. Sometimes a shorter timeframe like 'today 3-m' or 'now 7-d' might use a different API endpoint that isn't broken.
+
+    Use the Website: For the time being, the most reliable way to get related queries is to go directly to the Google Trends website and search for your terms manually.
+
+
+## E-commerce Platform APIs
+
+::: {#b983ad3c .cell execution_count=6}
+``` {.python .cell-code}
+# Google Trends for woodworking demand
+import pandas as pd
+from pytrends.request import TrendReq
+import time
+
+def analyze_woodworking_trends():
+    """
+    Analyzes Google Trends for woodworking keywords.
+
+    This robust version anticipates potential errors from the pytrends library
+    and handles them gracefully.
+    """
+    pytrends = TrendReq(hl='en-US', tz=360)
+    
+    keywords = ['custom furniture', 'woodworking', 'handmade furniture', 
+               'live edge table', 'custom cabinets']
+    
+    # --- 1. Get Interest Over Time (this part usually works reliably) ---
+    print("Fetching interest over time for all keywords...")
+    try:
+        pytrends.build_payload(keywords, timeframe='today 12-m', geo='US')
+        trends_data = pytrends.interest_over_time()
+    except Exception as e:
+        print(f"Could not fetch interest over time. Error: {e}")
+        trends_data = None
+    
+    # --- 2. Get Related Queries with Robust Error Handling ---
+    related_queries_dict = {}
+    print("\nFetching related queries for each keyword...")
+    
+    for keyword in keywords:
+        print(f"Fetching for: '{keyword}'")
+        time.sleep(2) # Increased delay to be safe
+        
+        try:
+            # Re-build payload for each keyword
+            pytrends.build_payload([keyword], timeframe='today 12-m', geo='US')
+            related_queries_dict[keyword] = pytrends.related_queries()
+        except IndexError:
+            # This is the specific error we are seeing.
+            print(f"  &gt; Caught IndexError. Google's API response is not in the expected format for '{keyword}'.")
+            related_queries_dict[keyword] = None # Mark as failed
+        except Exception as e:
+            # Catch any other potential errors
+            print(f"  &gt; An unexpected error occurred for '{keyword}': {e}")
+            related_queries_dict[keyword] = None # Mark as failed
+            
+    return trends_data, related_queries_dict
+
+# --- Run the analysis and display results safely ---
+trends_df, related_queries = analyze_woodworking_trends()
+
+if trends_df is not None:
+    print("\n\n--- Interest Over Time ---")
+    print(trends_df.tail())
+else:
+    print("\n\n--- No Interest Over Time data was fetched ---")
+
+print("\n\n--- Related Queries ---")
+if not related_queries:
+    print("No related queries could be fetched.")
+else:
+    for keyword, result in related_queries.items():
+        print(f"\n--- Results for '{keyword}' ---")
+        if result is None:
+            print("  &gt; No data returned due to an API parsing error.")
+            continue
+        
+        # Safely access 'top' and 'rising' queries
+        top_queries = result.get(keyword, {}).get('top')
+        rising_queries = result.get(keyword, {}).get('rising')
+        
+        if top_queries is not None and not top_queries.empty:
+            print("\n  Top Related Queries:")
+            print(top_queries)
+        else:
+            print("\n  &gt; No 'Top' related queries were found or could be parsed.")
+            
+        if rising_queries is not None and not rising_queries.empty:
+            print("\n  Rising Related Queries:")
+            print(rising_queries)
+        else:
+            print("\n  &gt; No 'Rising' related queries were found or could be parsed.")</code></pre>
+<div class="cell-output cell-output-stdout">
+<pre><code>Fetching interest over time for all keywords...</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/home/lubuntu/myenv/lib/python3.12/site-packages/pytrends/request.py:260: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  df = df.fillna(False)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Fetching related queries for each keyword...
+Fetching for: 'custom furniture'
+  &gt; Caught IndexError. Google's API response is not in the expected format for 'custom furniture'.
+Fetching for: 'woodworking'
+  &gt; Caught IndexError. Google's API response is not in the expected format for 'woodworking'.
+Fetching for: 'handmade furniture'
+  &gt; Caught IndexError. Google's API response is not in the expected format for 'handmade furniture'.
+Fetching for: 'live edge table'
+  &gt; Caught IndexError. Google's API response is not in the expected format for 'live edge table'.
+Fetching for: 'custom cabinets'
+  &gt; Caught IndexError. Google's API response is not in the expected format for 'custom cabinets'.
+
+
+--- Interest Over Time ---
+            custom furniture  woodworking  handmade furniture  \
+date                                                            
+2025-06-01                10           70                   1   
+2025-06-08                12           68                   1   
+2025-06-15                10           71                   1   
+2025-06-22                10           73                   1   
+2025-06-29                11           71                   1   
+
+            live edge table  custom cabinets  isPartial  
+date                                                     
+2025-06-01                5               15      False  
+2025-06-08                4               15      False  
+2025-06-15                5               15      False  
+2025-06-22                5               15      False  
+2025-06-29                5               13       True  
+
+
+--- Related Queries ---
+
+--- Results for 'custom furniture' ---
+  &gt; No data returned due to an API parsing error.
+
+--- Results for 'woodworking' ---
+  &gt; No data returned due to an API parsing error.
+
+--- Results for 'handmade furniture' ---
+  &gt; No data returned due to an API parsing error.
+
+--- Results for 'live edge table' ---
+  &gt; No data returned due to an API parsing error.
+
+--- Results for 'custom cabinets' ---
+  &gt; No data returned due to an API parsing error.</code></pre>
+</div>
+<p>:::</p>
+<div id="1b0c63da" class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Etsy API for handmade/custom furniture market</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_etsy_woodworking_market(api_key):</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Analyze woodworking market on Etsy"""</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Search for woodworking items</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="st">"https://openapi.etsy.com/v3/application/listings/active"</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    headers <span class="op">=</span> {</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'x-api-key'</span>: api_key,</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Content-Type'</span>: <span class="st">'application/json'</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    params <span class="op">=</span> {</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">'keywords'</span>: <span class="st">'custom furniture woodworking'</span>,</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">'limit'</span>: <span class="dv">100</span>,</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">'includes'</span>: <span class="st">'Images,Shop,User'</span>,</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'sort_on'</span>: <span class="st">'score'</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> requests.get(url, headers<span class="op">=</span>headers, params<span class="op">=</span>params)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>    listings <span class="op">=</span> response.json()</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Analyze pricing and demand indicators</span></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>    market_data <span class="op">=</span> []</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> listing <span class="kw">in</span> listings.get(<span class="st">'results'</span>, []):</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>        market_data.append({</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>            <span class="st">'title'</span>: listing.get(<span class="st">'title'</span>),</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>            <span class="st">'price'</span>: listing.get(<span class="st">'price'</span>, {}).get(<span class="st">'amount'</span>),</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>            <span class="st">'currency'</span>: listing.get(<span class="st">'price'</span>, {}).get(<span class="st">'currency_code'</span>),</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>            <span class="st">'views'</span>: listing.get(<span class="st">'views'</span>),</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>            <span class="st">'num_favorers'</span>: listing.get(<span class="st">'num_favorers'</span>),</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>            <span class="st">'shop_name'</span>: listing.get(<span class="st">'Shop'</span>, {}).get(<span class="st">'shop_name'</span>),</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>            <span class="st">'creation_timestamp'</span>: listing.get(<span class="st">'creation_timestamp'</span>)</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> market_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="local-business-intelligence" class="level2">
+<h2 class="anchored" data-anchor-id="local-business-intelligence">Local Business Intelligence</h2>
+<div id="66307804" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Google My Business API for local competition analysis</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_local_woodworking_businesses(location, gmb_api_key):</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Find local woodworking businesses and their performance"""</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> googlemaps</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    gmaps <span class="op">=</span> googlemaps.Client(key<span class="op">=</span>gmb_api_key)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Search for woodworking businesses</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    search_terms <span class="op">=</span> [</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'custom furniture'</span>,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'woodworking shop'</span>,</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'cabinet maker'</span>,</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'furniture maker'</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    local_businesses <span class="op">=</span> []</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> term <span class="kw">in</span> search_terms:</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>        places <span class="op">=</span> gmaps.places_nearby(</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>            location<span class="op">=</span>location,</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>            radius<span class="op">=</span><span class="dv">50000</span>,  <span class="co"># 50km radius</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>            keyword<span class="op">=</span>term,</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>            <span class="bu">type</span><span class="op">=</span><span class="st">'establishment'</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> place <span class="kw">in</span> places.get(<span class="st">'results'</span>, []):</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>            place_details <span class="op">=</span> gmaps.place(</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>                place_id<span class="op">=</span>place[<span class="st">'place_id'</span>],</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>                fields<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'rating'</span>, <span class="st">'user_ratings_total'</span>, <span class="st">'website'</span>, </span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>                       <span class="st">'formatted_phone_number'</span>, <span class="st">'opening_hours'</span>, <span class="st">'photos'</span>]</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>            local_businesses.append({</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>                <span class="st">'name'</span>: place_details[<span class="st">'result'</span>][<span class="st">'name'</span>],</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>                <span class="st">'rating'</span>: place_details[<span class="st">'result'</span>].get(<span class="st">'rating'</span>),</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>                <span class="st">'review_count'</span>: place_details[<span class="st">'result'</span>].get(<span class="st">'user_ratings_total'</span>),</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>                <span class="st">'website'</span>: place_details[<span class="st">'result'</span>].get(<span class="st">'website'</span>),</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>                <span class="st">'search_term'</span>: term</span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>            })</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> local_businesses</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="price-analysis-tools" class="level2">
+<h2 class="anchored" data-anchor-id="price-analysis-tools">Price Analysis Tools</h2>
+<div id="f9cf97e8" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_pricing_data(market_data):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Analyze pricing patterns in woodworking market"""</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame(market_data)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Price analysis by category</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    price_analysis <span class="op">=</span> {</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'avg_price'</span>: df[<span class="st">'price'</span>].mean(),</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'median_price'</span>: df[<span class="st">'price'</span>].median(),</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'price_range'</span>: {</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">'low'</span>: df[<span class="st">'price'</span>].quantile(<span class="fl">0.25</span>),</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>            <span class="st">'high'</span>: df[<span class="st">'price'</span>].quantile(<span class="fl">0.75</span>)</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">'popular_price_points'</span>: df[<span class="st">'price'</span>].value_counts().head(<span class="dv">10</span>)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Demand indicators</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    demand_analysis <span class="op">=</span> {</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">'avg_views'</span>: df[<span class="st">'views'</span>].mean(),</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">'avg_favorites'</span>: df[<span class="st">'num_favorers'</span>].mean(),</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">'high_demand_items'</span>: df.nlargest(<span class="dv">10</span>, <span class="st">'views'</span>)[[<span class="st">'title'</span>, <span class="st">'price'</span>, <span class="st">'views'</span>]]</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> price_analysis, demand_analysis</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_market_report(price_analysis, demand_analysis):</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Generate market analysis report"""</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>    report <span class="op">=</span> <span class="ss">f"""</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="ss">    WOODWORKING MARKET ANALYSIS REPORT</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a><span class="ss">    ================================</span></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a><span class="ss">    PRICING INSIGHTS:</span></span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a><span class="ss">    - Average Price: $</span><span class="sc">{</span>price_analysis[<span class="st">'avg_price'</span>]<span class="sc">:.2f}</span></span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a><span class="ss">    - Median Price: $</span><span class="sc">{</span>price_analysis[<span class="st">'median_price'</span>]<span class="sc">:.2f}</span></span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a><span class="ss">    - Price Range (25th-75th percentile): $</span><span class="sc">{</span>price_analysis[<span class="st">'price_range'</span>][<span class="st">'low'</span>]<span class="sc">:.2f}</span><span class="ss"> - $</span><span class="sc">{</span>price_analysis[<span class="st">'price_range'</span>][<span class="st">'high'</span>]<span class="sc">:.2f}</span></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span></span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a><span class="ss">    DEMAND INDICATORS:</span></span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a><span class="ss">    - Average Views per Item: </span><span class="sc">{</span>demand_analysis[<span class="st">'avg_views'</span>]<span class="sc">:.0f}</span></span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a><span class="ss">    - Average Favorites per Item: </span><span class="sc">{</span>demand_analysis[<span class="st">'avg_favorites'</span>]<span class="sc">:.0f}</span></span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span></span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a><span class="ss">    TOP PERFORMING ITEMS:</span></span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a><span class="ss">    </span><span class="sc">{</span>demand_analysis[<span class="st">'high_demand_items'</span>]<span class="sc">.</span>to_string()<span class="sc">}</span></span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a><span class="ss">    """</span></span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> report</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[1]</span><span class="ansi-green-fg">, line 2</span>
+<span class="ansi-green-fg">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg ansi-bold">pandas</span><span style="color:rgb(188,188,188)"> </span><span style="font-weight:bold;color:rgb(0,135,0)">as</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg ansi-bold">pd</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg ansi-bold">matplotlib</span><span class="ansi-blue-fg ansi-bold">.</span><span class="ansi-blue-fg ansi-bold">pyplot</span><span style="color:rgb(188,188,188)"> </span><span style="font-weight:bold;color:rgb(0,135,0)">as</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg ansi-bold">plt</span>
+<span class="ansi-green-fg">      4</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span><span style="color:rgb(188,188,188)"> </span><span class="ansi-blue-fg">analyze_pricing_data</span>(market_data):
+<span class="ansi-green-fg">      5</span> <span style="color:rgb(188,188,188)">    </span><span style="font-style:italic" class="ansi-yellow-fg">"""Analyze pricing patterns in woodworking market"""</span>
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'matplotlib'</pre>
+</div>
+</div>
+</div>
+</section>
+<section id="web-scraping-for-public-business-directories" class="level2">
+<h2 class="anchored" data-anchor-id="web-scraping-for-public-business-directories">Web Scraping for Public Business Directories</h2>
+<div id="21d97443" class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scraping Yellow Pages or similar business directories (public data)</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scrape_business_directory(location, category<span class="op">=</span><span class="st">"furniture"</span>):</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Scrape public business directory data"""</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This is for publicly available directory information</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    base_url <span class="op">=</span> <span class="st">"https://www.yellowpages.com/search"</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    params <span class="op">=</span> {</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'search_terms'</span>: <span class="ss">f'</span><span class="sc">{</span>category<span class="sc">}</span><span class="ss"> woodworking'</span>,</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">'geo_location_terms'</span>: location</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    headers <span class="op">=</span> {</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">'User-Agent'</span>: <span class="st">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>    businesses <span class="op">=</span> []</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>        response <span class="op">=</span> requests.get(base_url, params<span class="op">=</span>params, headers<span class="op">=</span>headers)</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>        soup <span class="op">=</span> BeautifulSoup(response.content, <span class="st">'html.parser'</span>)</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Extract business information (adjust selectors based on site structure)</span></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>        business_listings <span class="op">=</span> soup.find_all(<span class="st">'div'</span>, class_<span class="op">=</span><span class="st">'result'</span>)</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> listing <span class="kw">in</span> business_listings:</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>            name <span class="op">=</span> listing.find(<span class="st">'a'</span>, class_<span class="op">=</span><span class="st">'business-name'</span>)</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>            rating <span class="op">=</span> listing.find(<span class="st">'div'</span>, class_<span class="op">=</span><span class="st">'rating'</span>)</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> name:</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>                businesses.append({</span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'name'</span>: name.get_text().strip(),</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'rating'</span>: rating.get_text().strip() <span class="cf">if</span> rating <span class="cf">else</span> <span class="st">'N/A'</span></span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>                })</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="dv">2</span>)  <span class="co"># Be respectful with requests</span></span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Error scraping directory: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> businesses</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="social-media-market-research" class="level2">
+<h2 class="anchored" data-anchor-id="social-media-market-research">Social Media Market Research</h2>
+<div id="d2c1e55e" class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using official APIs for market research</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_woodworking_social_trends():</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Analyze social media trends for woodworking"""</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Instagram Hashtag Analysis (using official API)</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    woodworking_hashtags <span class="op">=</span> [</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'#customfurniture'</span>, <span class="st">'#woodworking'</span>, <span class="st">'#handmade'</span>, </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'#liveedge'</span>, <span class="st">'#woodwork'</span>, <span class="st">'#furniture'</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># YouTube Data API for woodworking content analysis</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_youtube_woodworking_data(api_key):</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        <span class="im">from</span> googleapiclient.discovery <span class="im">import</span> build</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>        youtube <span class="op">=</span> build(<span class="st">'youtube'</span>, <span class="st">'v3'</span>, developerKey<span class="op">=</span>api_key)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>        search_response <span class="op">=</span> youtube.search().<span class="bu">list</span>(</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>            q<span class="op">=</span><span class="st">'woodworking business custom furniture'</span>,</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>            part<span class="op">=</span><span class="st">'id,snippet'</span>,</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>            maxResults<span class="op">=</span><span class="dv">50</span>,</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>            <span class="bu">type</span><span class="op">=</span><span class="st">'video'</span>,</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>            order<span class="op">=</span><span class="st">'relevance'</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>        ).execute()</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>        video_data <span class="op">=</span> []</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> item <span class="kw">in</span> search_response[<span class="st">'items'</span>]:</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>            video_data.append({</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>                <span class="st">'title'</span>: item[<span class="st">'snippet'</span>][<span class="st">'title'</span>],</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>                <span class="st">'description'</span>: item[<span class="st">'snippet'</span>][<span class="st">'description'</span>],</span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>                <span class="st">'published_at'</span>: item[<span class="st">'snippet'</span>][<span class="st">'publishedAt'</span>]</span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>            })</span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> video_data</span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> woodworking_hashtags</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="demand-forecasting-model" class="level2">
+<h2 class="anchored" data-anchor-id="demand-forecasting-model">Demand Forecasting Model</h2>
+<div id="3e1db637" class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_demand_forecast(historical_data):</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Create demand forecast based on collected data"""</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> pd.DataFrame(historical_data)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'date'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>])</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'month'</span>] <span class="op">=</span> df[<span class="st">'date'</span>].dt.month</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'year'</span>] <span class="op">=</span> df[<span class="st">'date'</span>].dt.year</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Features for demand prediction</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    features <span class="op">=</span> [<span class="st">'month'</span>, <span class="st">'year'</span>, <span class="st">'avg_price'</span>, <span class="st">'search_volume'</span>]</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> df[features]</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> df[<span class="st">'demand_indicator'</span>]  <span class="co"># Views, sales, etc.</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Simple linear regression model</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> LinearRegression()</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    model.fit(X, y)</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Forecast next 6 months</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>    future_months <span class="op">=</span> []</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>    current_date <span class="op">=</span> pd.Timestamp.now()</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">7</span>):</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>        future_date <span class="op">=</span> current_date <span class="op">+</span> pd.DateOffset(months<span class="op">=</span>i)</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>        future_months.append({</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>            <span class="st">'month'</span>: future_date.month,</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>            <span class="st">'year'</span>: future_date.year,</span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>            <span class="st">'avg_price'</span>: df[<span class="st">'avg_price'</span>].mean(),  <span class="co"># Use historical average</span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>            <span class="st">'search_volume'</span>: df[<span class="st">'search_volume'</span>].mean()</span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>    future_df <span class="op">=</span> pd.DataFrame(future_months)</span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>    forecast <span class="op">=</span> model.predict(future_df[features])</span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> forecast, future_df</span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_business_insights(all_data):</span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Generate actionable business insights"""</span></span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>    insights <span class="op">=</span> {</span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">'optimal_price_range'</span>: <span class="va">None</span>,</span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a>        <span class="st">'high_demand_products'</span>: [],</span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a>        <span class="st">'seasonal_trends'</span>: {},</span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">'competitor_gaps'</span>: [],</span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>        <span class="st">'market_opportunities'</span>: []</span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Analyze optimal pricing</span></span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a>    price_demand_correlation <span class="op">=</span> np.corrcoef(all_data[<span class="st">'prices'</span>], all_data[<span class="st">'demand'</span>])</span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Identify market gaps</span></span>
+<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Analyze competitor offerings vs. market demand</span></span>
+<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> insights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data-collection-automation" class="level2">
+<h2 class="anchored" data-anchor-id="data-collection-automation">Data Collection Automation</h2>
+<div id="a969d692" class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> schedule</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> WoodworkingMarketResearch:</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.data_store <span class="op">=</span> []</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> daily_data_collection(<span class="va">self</span>):</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Collect market data daily"""</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Google Trends data</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>        trends_data <span class="op">=</span> analyze_woodworking_trends()</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Local business data</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>        local_data <span class="op">=</span> analyze_local_woodworking_businesses(<span class="st">"Your City, State"</span>, <span class="st">"API_KEY"</span>)</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># E-commerce data</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>        etsy_data <span class="op">=</span> analyze_etsy_woodworking_market(<span class="st">"ETSY_API_KEY"</span>)</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Combine and store data</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>        daily_snapshot <span class="op">=</span> {</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>            <span class="st">'date'</span>: datetime.now(),</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>            <span class="st">'trends'</span>: trends_data,</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>            <span class="st">'local_businesses'</span>: local_data,</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>            <span class="st">'ecommerce_data'</span>: etsy_data</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.data_store.append(daily_snapshot)</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Save to CSV</span></span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.save_daily_report()</span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> save_daily_report(<span class="va">self</span>):</span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Save collected data to CSV"""</span></span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.data_store:</span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>            df <span class="op">=</span> pd.DataFrame(<span class="va">self</span>.data_store)</span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>            filename <span class="op">=</span> <span class="ss">f"woodworking_market_data_</span><span class="sc">{</span>datetime<span class="sc">.</span>now()<span class="sc">.</span>strftime(<span class="st">'%Y%m</span><span class="sc">%d</span><span class="st">'</span>)<span class="sc">}</span><span class="ss">.csv"</span></span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a>            df.to_csv(filename, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"Market data saved: </span><span class="sc">{</span>filename<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Schedule daily data collection</span></span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a>researcher <span class="op">=</span> WoodworkingMarketResearch()</span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a>schedule.every().day.at(<span class="st">"09:00"</span>).do(researcher.daily_data_collection)</span>
+<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Run the scheduler</span></span>
+<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a>    schedule.run_pending()</span>
+<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">3600</span>)  <span class="co"># Check every hour</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="marketing-and-forecasting-research" class="level1">
+<h1>Marketing and Forecasting Research</h1>
+</section>
+<section id="market-research-data-sources" class="level1">
+<h1>Market Research Data Sources</h1>
+<section id="industry-reports-analytics-1" class="level2">
+<h2 class="anchored" data-anchor-id="industry-reports-analytics-1">Industry Reports &amp; Analytics</h2>
+</section>
+</section>
+<section id="google-trends-for-woodworking-demand-1" class="level1">
+<h1>Google Trends for woodworking demand</h1>
+<p>from pytrends.request import TrendReq</p>
+<p>def analyze_woodworking_trends(): pytrends = TrendReq(hl=‘en-US’, tz=360)</p>
+<pre><code># Woodworking-related keywords
+keywords = ['custom furniture', 'woodworking', 'handmade furniture', 
+           'live edge table', 'custom cabinets']
+
+pytrends.build_payload(keywords, timeframe='today 12-m', geo='US')
+
+# Get interest over time
+trends_data = pytrends.interest_over_time()
+
+# Get related queries
+related_queries = pytrends.related_queries()
+
+return trends_data, related_queries</code></pre>
+<p>trends, queries = analyze_woodworking_trends()</p>
+<section id="anthropic-attempted-fix-1" class="level3">
+<h3 class="anchored" data-anchor-id="anthropic-attempted-fix-1">Anthropic Attempted Fix</h3>
+<p>import time import random from pytrends.request import TrendReq import pandas as pd</p>
+<p>def analyze_woodworking_trends(): try: # Initialize with different settings pytrends = TrendReq(hl=‘en-US’, tz=360, timeout=(10,25), retries=2, backoff_factor=0.1)</p>
+<pre><code>    # Use fewer keywords (max 5 per request)
+    keywords = ['custom furniture', 'woodworking', 'handmade furniture']
+    
+    # Add random delay to avoid rate limiting
+    time.sleep(random.uniform(1, 3))
+    
+    print("Building payload...")
+    pytrends.build_payload(keywords, timeframe='today 12-m', geo='US')
+    
+    print("Getting interest over time...")
+    trends_data = pytrends.interest_over_time()
+    
+    # Add delay before next request
+    time.sleep(random.uniform(2, 4))
+    
+    print("Getting related queries...")
+    related_queries = pytrends.related_queries()
+    
+    return trends_data, related_queries
+    
+except Exception as e:
+    print(f"Error: {e}")
+    print("Trying alternative approach...")
+    return analyze_with_smaller_batches()</code></pre>
+<p>def analyze_with_smaller_batches(): “““Alternative approach with individual keyword analysis”“” pytrends = TrendReq(hl=‘en-US’, tz=360, timeout=(10,25), retries=2, backoff_factor=0.1)</p>
+<pre><code>keywords = ['woodworking', 'custom furniture', 'handmade furniture']
+all_data = {}
+
+for keyword in keywords:
+    try:
+        print(f"Analyzing: {keyword}")
+        time.sleep(random.uniform(2, 4))  # Longer delay between requests
+        
+        pytrends.build_payload([keyword], timeframe='today 12-m', geo='US')
+        trends = pytrends.interest_over_time()
+        
+        if not trends.empty:
+            all_data[keyword] = trends[keyword]
+        
+    except Exception as e:
+        print(f"Failed for {keyword}: {e}")
+        continue
+
+if all_data:
+    combined_df = pd.DataFrame(all_data)
+    return combined_df, None
+else:
+    return None, None</code></pre>
+</section>
+</section>
+<section id="run-the-analysis" class="level1">
+<h1>Run the analysis</h1>
+<p>print(“Starting woodworking trends analysis…”) trends, queries = analyze_woodworking_trends()</p>
+<p>if trends is not None and not trends.empty: print(“=== TRENDS DATA ===”) print(trends.head()) print(f”: {trends.shape}“)</p>
+<pre><code>if queries:
+    print("\n=== RELATED QUERIES ===")
+    for keyword, query_data in queries.items():
+        print(f"\n{keyword.upper()}:")
+        if query_data['top'] is not None:
+            print("Top queries:")
+            print(query_data['top'].head())</code></pre>
+<p>else: print(“No data retrieved. Google Trends might be blocking requests.”) print(“Try again later or use a different approach.”)</p>
+<section id="google-fix-1" class="level3">
+<h3 class="anchored" data-anchor-id="google-fix-1">Google Fix</h3>
+</section>
+</section>
+<section id="google-trends-for-woodworking-demand-2" class="level1">
+<h1>Google Trends for woodworking demand</h1>
+<p>import pandas as pd from pytrends.request import TrendReq import time # Import the time module to pause between requests</p>
+<p>def analyze_woodworking_trends(): ““” Analyzes Google Trends for woodworking keywords.</p>
+<pre><code>Fetches interest over time for a list of keywords and then fetches
+related queries for each keyword individually.
+
+Returns:
+    pd.DataFrame: A DataFrame containing interest over time data.
+    dict: A dictionary containing related queries for each keyword.
+"""
+pytrends = TrendReq(hl='en-US', tz=360)
+
+# Woodworking-related keywords
+keywords = ['custom furniture', 'woodworking', 'handmade furniture', 
+           'live edge table', 'custom cabinets']
+
+# --- 1. Get Interest Over Time for all keywords (for comparison) ---
+print("Fetching interest over time for all keywords...")
+pytrends.build_payload(keywords, timeframe='today 12-m', geo='US')
+trends_data = pytrends.interest_over_time()
+
+# --- 2. Get Related Queries for each keyword individually ---
+related_queries_dict = {}
+print("\nFetching related queries for each keyword...")
+
+for keyword in keywords:
+    print(f"Fetching for: '{keyword}'")
+    # Build a new payload for each individual keyword
+    pytrends.build_payload([keyword], timeframe='today 12-m', geo='US')
+    
+    # Add a small delay to avoid making requests too quickly
+    time.sleep(1) 
+    
+    try:
+        related_queries_dict[keyword] = pytrends.related_queries()
+    except Exception as e:
+        print(f"Could not fetch related queries for '{keyword}'. Error: {e}")
+        related_queries_dict[keyword] = None
+
+return trends_data, related_queries_dict</code></pre>
+</section>
+<section id="run-the-analysis-1" class="level1">
+<h1>Run the analysis</h1>
+<p>trends_df, related_queries = analyze_woodworking_trends()</p>
+</section>
+<section id="display-the-results" class="level1">
+<h1>— Display the results —</h1>
+<p>print(“— Interest Over Time —”) print(trends_df.tail()) # Print the last 5 rows of the trend data</p>
+<p>print(“— Related Queries —”) for keyword, queries in related_queries.items(): if queries: print(f”Related Queries for ‘{keyword}’:“) # The result is a dictionary where the value is another dictionary with ‘top’ and ‘rising’ top_queries = queries[keyword][‘top’] if top_queries is not None and not top_queries.empty: print(top_queries) else: print(”No top related queries found.”)</p>
+<section id="google-response-to-broken-api-endpoint-1" class="level4">
+<h4 class="anchored" data-anchor-id="google-response-to-broken-api-endpoint-1">Google Response to Broken API Endpoint</h4>
+<pre><code> ```</code></pre>
+</section>
+</section>
+<section id="google-trends-for-woodworking-demand-3" class="level1">
+<h1>Google Trends for woodworking demand</h1>
+<p>from pytrends.request import TrendReq</p>
+<p>def analyze_woodworking_trends():</p>
+<p>pytrends = TrendReq(hl=‘en-US’, tz=360)</p>
+</section>
+<section id="woodworking-related-keywords-1" class="level1">
+<h1>Woodworking-related keywords</h1>
+<p>keywords = [‘custom furniture’, ‘woodworking’, ‘handmade furniture’,</p>
+<p>‘live edge table’, ‘custom cabinets’]</p>
+<p>pytrends.build_payload(keywords, timeframe=‘today 12-m’, geo=‘US’)</p>
+</section>
+<section id="get-interest-over-time-1" class="level1">
+<h1>Get interest over time</h1>
+<p>trends_data = pytrends.interest_over_time()</p>
+</section>
+<section id="get-related-queries-1" class="level1">
+<h1>Get related queries</h1>
+<p>related_queries = pytrends.related_queries()</p>
+<p>return trends_data, related_queries</p>
+<p>trends, queries = analyze_woodworking_trends()</p>
+<p>```</p>
+<p>/home/lubuntu/myenv/lib/python3.12/site-packages/pytrends/request.py:260: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set <code>pd.set_option('future.no_silent_downcasting', True)</code></p>
+<p>df = df.fillna(False)</p>
+<hr>
+<p>IndexError Traceback (most recent call last)</p>
+<p>Cell In[4], line 21</p>
+<p>17 related_queries = pytrends.related_queries()</p>
+<p>19 return trends_data, related_queries</p>
+<p>—&gt; 21 trends, queries = analyze_woodworking_trends()</p>
+<p>Cell In[4], line 17, in analyze_woodworking_trends()</p>
+<p>14 trends_data = pytrends.interest_over_time()</p>
+<p>16 # Get related queries</p>
+<p>—&gt; 17 related_queries = pytrends.related_queries()</p>
+<p>19 return trends_data, related_queries</p>
+<p>File ~/myenv/lib/python3.12/site-packages/pytrends/request.py:450, in TrendReq.related_queries(self)</p>
+<p>447 # top queries</p>
+<p>448 try:</p>
+<p>449 top_df = pd.DataFrame(</p>
+<p>–&gt; 450 req_json[‘default’][‘rankedList’][0][‘rankedKeyword’])</p>
+<p>451 top_df = top_df[[‘query’, ‘value’]]</p>
+<p>452 except KeyError:</p>
+<p>453 # in case no top queries are found, the lines above will throw a KeyError</p>
+<p>IndexError: list index out of range</p>
+<p>Outline</p>
+<pre><code>Diagnosis of the IndexError: An explanation of why the IndexError: list index out of range occurs when using related_queries() with multiple keywords.
+
+The Solution: A description of the correct approach, which involves iterating through each keyword to fetch its related queries individually.
+
+Corrected Python Code: A complete, runnable code snippet that implements the solution and correctly fetches both interest over time for all keywords and related queries for each keyword.
+
+Explanation of Changes: A step-by-step breakdown of the modifications made to the original code.
+
+A Note on the FutureWarning: A brief explanation of the warning message appearing in the output.</code></pre>
+<ol type="1">
+<li>Diagnosis of the IndexError</li>
+</ol>
+<p>Hello! I can help you with this Python error. The IndexError: list index out of range you’re encountering is a common issue when using the pytrends library.</p>
+<p>The root cause of the problem is that the pytrends.related_queries() method is designed to fetch data for only one keyword at a time.</p>
+<p>In your original code, you build a single payload with a list of five keywords: pytrends.build_payload(keywords, …)</p>
+<p>While interest_over_time() can handle multiple keywords to generate a comparison chart, related_queries() cannot. When it receives a payload with more than one keyword, the Google Trends API returns a data structure that pytrends doesn’t expect. Specifically, the list that should contain the related query data (rankedList) comes back empty. The library then tries to access the first element of this empty list ([0]), which triggers the IndexError.</p>
+<ol start="2" type="1">
+<li>The Solution</li>
+</ol>
+<p>To fix this, you need to separate the logic for fetching “interest over time” and “related queries.”</p>
+<pre><code>Interest Over Time: You can continue to fetch this data in a single call with all your keywords to get a comparison.
+
+Related Queries: You must loop through your list of keywords and make a separate API call for each one. You can store the results in a dictionary where the keys are your keywords and the values are the corresponding related queries.</code></pre>
+<ol start="3" type="1">
+<li>Corrected Python Code</li>
+</ol>
+<p>Here is the corrected and complete code. This version first gets the comparison data for all keywords and then iterates through each keyword to safely get its related queries. Python</p>
+</section>
+<section id="google-trends-for-woodworking-demand-4" class="level1">
+<h1>Google Trends for woodworking demand</h1>
+<p>import pandas as pd from pytrends.request import TrendReq import time # Import the time module to pause between requests</p>
+<p>def analyze_woodworking_trends(): ““” Analyzes Google Trends for woodworking keywords.</p>
+<pre><code>Fetches interest over time for a list of keywords and then fetches
+related queries for each keyword individually.
+
+Returns:
+    pd.DataFrame: A DataFrame containing interest over time data.
+    dict: A dictionary containing related queries for each keyword.
+"""
+pytrends = TrendReq(hl='en-US', tz=360)
+
+# Woodworking-related keywords
+keywords = ['custom furniture', 'woodworking', 'handmade furniture', 
+           'live edge table', 'custom cabinets']
+
+# --- 1. Get Interest Over Time for all keywords (for comparison) ---
+print("Fetching interest over time for all keywords...")
+pytrends.build_payload(keywords, timeframe='today 12-m', geo='US')
+trends_data = pytrends.interest_over_time()
+
+# --- 2. Get Related Queries for each keyword individually ---
+related_queries_dict = {}
+print("\nFetching related queries for each keyword...")
+
+for keyword in keywords:
+    print(f"Fetching for: '{keyword}'")
+    # Build a new payload for each individual keyword
+    pytrends.build_payload([keyword], timeframe='today 12-m', geo='US')
+    
+    # Add a small delay to avoid making requests too quickly
+    time.sleep(1) 
+    
+    try:
+        related_queries_dict[keyword] = pytrends.related_queries()
+    except Exception as e:
+        print(f"Could not fetch related queries for '{keyword}'. Error: {e}")
+        related_queries_dict[keyword] = None
+
+return trends_data, related_queries_dict</code></pre>
+</section>
+<section id="run-the-analysis-2" class="level1">
+<h1>Run the analysis</h1>
+<p>trends_df, related_queries = analyze_woodworking_trends()</p>
+</section>
+<section id="display-the-results-1" class="level1">
+<h1>— Display the results —</h1>
+<p>print(“— Interest Over Time —”) print(trends_df.tail()) # Print the last 5 rows of the trend data</p>
+<p>print(“— Related Queries —”) for keyword, queries in related_queries.items(): if queries: print(f”Related Queries for ‘{keyword}’:“) # The result is a dictionary where the value is another dictionary with ‘top’ and ‘rising’ top_queries = queries[keyword][‘top’] if top_queries is not None and not top_queries.empty: print(top_queries) else: print(”No top related queries found.”)</p>
+<ol start="4" type="1">
+<li><p>Explanation of Changes</p>
+<p>Separate API Calls: The core logic is now split. The call to get interest_over_time remains as it was, using the full list of keywords.</p>
+<p>Loop for Related Queries: A for loop iterates through your keywords list.</p>
+<p>Single-Keyword Payload: Inside the loop, pytrends.build_payload([keyword], …) is called. Note that keyword is enclosed in square brackets [] because the method expects a list, even if it’s just a list containing one item.</p>
+<p>Storing Results: The results from pytrends.related_queries() are stored in a dictionary called related_queries_dict. This is a clean way to associate each keyword with its specific results.</p>
+<p>Error Handling &amp; Delay:</p>
+<pre><code> time.sleep(1): A one-second pause is added in the loop. It's good practice to add a small delay between API calls to avoid being rate-limited or blocked by Google for making too many requests too quickly.
+
+ try...except: I've wrapped the related_queries() call in a try...except block. This makes the code more robust. If Google Trends has no related query data for a specific term, it might still cause an error, and this block will catch it, print a message, and allow the script to continue to the next keyword instead of crashing.</code></pre></li>
+<li><p>A Note on the FutureWarning</p></li>
+</ol>
+<p>You may still see this warning in your output: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated…</p>
+<p>This warning is not causing your IndexError. It originates from the pandas library, which pytrends uses internally. It’s simply informing you that a function pandas uses will behave differently in a future version. This is a message for the developers of pytrends to address in a future update. You can safely ignore this warning as it does not affect the execution or results of your code.</p>
+<p>Fetching related queries for each keyword…</p>
+<p>Fetching for: ‘custom furniture’</p>
+<p>Could not fetch related queries for ‘custom furniture’. Error: list index out of range</p>
+<p>Fetching for: ‘woodworking’</p>
+<p>Could not fetch related queries for ‘woodworking’. Error: list index out of range</p>
+<p>Fetching for: ‘handmade furniture’</p>
+<p>Could not fetch related queries for ‘handmade furniture’. Error: list index out of range</p>
+<p>Fetching for: ‘live edge table’</p>
+<p>Could not fetch related queries for ‘live edge table’. Error: list index out of range</p>
+<p>Fetching for: ‘custom cabinets’</p>
+<p>Could not fetch related queries for ‘custom cabinets’. Error: list index out of range</p>
+<p>— Interest Over Time —</p>
+<p>custom furniture woodworking handmade furniture<br>
+</p>
+<p>date</p>
+<p>2025-06-01 10 70 1</p>
+<p>2025-06-08 12 68 1</p>
+<p>2025-06-15 10 71 1</p>
+<p>2025-06-22 10 73 1</p>
+<p>2025-06-29 11 66 1</p>
+<p>live edge table custom cabinets isPartial</p>
+<p>date</p>
+<p>2025-06-01 5 15 False</p>
+<p>2025-06-08 4 15 False</p>
+<p>2025-06-15 5 15 False</p>
+<p>2025-06-22 5 15 False</p>
+<p>2025-06-29 5 13 True</p>
+<p>— Related Queries —</p>
+<p>You’ve run into a frustrating and unfortunately common issue with the pytrends library. Your new output confirms that the error isn’t just about sending multiple keywords at once, but is a more fundamental problem with the related_queries() function itself.</p>
+<p>Let’s break down what’s happening and how to build a more robust script to handle it.</p>
+<p>Outline</p>
+<pre><code>Diagnosis of the Persistent Error: An explanation of why the IndexError continues to happen even with single keywords, pointing to an issue within the pytrends library itself.
+
+The Fragility of Unofficial Wrappers: A brief look at why libraries like pytrends can sometimes break.
+
+Robust Solution: A revised code block that anticipates these errors and safely handles the data that is returned, preventing crashes and extracting whatever information is available.
+
+Interpreting the New Results: How to understand the output from the robust script.</code></pre>
+<ol type="1">
+<li>Diagnosis of the Persistent Error</li>
+</ol>
+<p>The fact that you are now getting the IndexError: list index out of range for every single keyword tells us the problem lies within the pytrends library’s ability to parse the response it’s getting from Google.</p>
+<p>Here’s the situation:</p>
+<pre><code>You send a valid request for a single keyword (e.g., 'woodworking').
+
+Google Trends sends back a response.
+
+The structure of this response has likely changed slightly from what the pytrends library was originally designed to expect.
+
+When the related_queries() method tries to find the data in the specific location it's hard-coded to look (req_json['default']['rankedList'][0]), it finds an empty list ([]) and crashes when it tries to get the first item ([0]).</code></pre>
+<p>This happens even when there are related queries visible on the Google Trends website. The issue is purely in the parsing step within the library.</p>
+<ol start="2" type="1">
+<li>The Fragility of Unofficial Wrappers</li>
+</ol>
+<p>pytrends is an unofficial “wrapper” library. It works by mimicking a web browser to scrape the Google Trends website and access its internal API. This is a brilliant but fragile approach. If Google changes the backend structure of their website or API—even slightly—the library can break until its developers release a new version that accounts for the change. You appear to have caught it during one of these broken periods.</p>
+<ol start="3" type="1">
+<li>Robust Solution</li>
+</ol>
+<p>We cannot fix the pytrends library itself, but we can write our Python code to be more defensive. The goal is to successfully call the function and then carefully inspect whatever data we get back, rather than assuming it’s in the correct format.</p>
+<p>The code below is designed to handle this IndexError gracefully. It attempts the call and then safely checks the structure of the returned dictionary before trying to extract the ‘top’ and ‘rising’ queries. Python</p>
+</section>
+<section id="google-trends-for-woodworking-demand-5" class="level1">
+<h1>Google Trends for woodworking demand</h1>
+<p>import pandas as pd from pytrends.request import TrendReq import time</p>
+<p>def analyze_woodworking_trends(): ““” Analyzes Google Trends for woodworking keywords.</p>
+<pre><code>This robust version anticipates potential errors from the pytrends library
+and handles them gracefully.
+"""
+pytrends = TrendReq(hl='en-US', tz=360)
+
+keywords = ['custom furniture', 'woodworking', 'handmade furniture', 
+           'live edge table', 'custom cabinets']
+
+# --- 1. Get Interest Over Time (this part usually works reliably) ---
+print("Fetching interest over time for all keywords...")
+try:
+    pytrends.build_payload(keywords, timeframe='today 12-m', geo='US')
+    trends_data = pytrends.interest_over_time()
+except Exception as e:
+    print(f"Could not fetch interest over time. Error: {e}")
+    trends_data = None
+
+# --- 2. Get Related Queries with Robust Error Handling ---
+related_queries_dict = {}
+print("\nFetching related queries for each keyword...")
+
+for keyword in keywords:
+    print(f"Fetching for: '{keyword}'")
+    time.sleep(2) # Increased delay to be safe
+    
+    try:
+        # Re-build payload for each keyword
+        pytrends.build_payload([keyword], timeframe='today 12-m', geo='US')
+        related_queries_dict[keyword] = pytrends.related_queries()
+    except IndexError:
+        # This is the specific error we are seeing.
+        print(f"  &gt; Caught IndexError. Google's API response is not in the expected format for '{keyword}'.")
+        related_queries_dict[keyword] = None # Mark as failed
+    except Exception as e:
+        # Catch any other potential errors
+        print(f"  &gt; An unexpected error occurred for '{keyword}': {e}")
+        related_queries_dict[keyword] = None # Mark as failed
+        
+return trends_data, related_queries_dict</code></pre>
+</section>
+<section id="run-the-analysis-and-display-results-safely" class="level1">
+<h1>— Run the analysis and display results safely —</h1>
+<p>trends_df, related_queries = analyze_woodworking_trends()</p>
+<p>if trends_df is not None: print(“— Interest Over Time —”) print(trends_df.tail()) else: print(“— No Interest Over Time data was fetched —”)</p>
+<p>print(“— Related Queries —”) if not related_queries: print(“No related queries could be fetched.”) else: for keyword, result in related_queries.items(): print(f”— Results for ‘{keyword}’ —“) if result is None: print(” &gt; No data returned due to an API parsing error.”) continue</p>
+<pre><code>    # Safely access 'top' and 'rising' queries
+    top_queries = result.get(keyword, {}).get('top')
+    rising_queries = result.get(keyword, {}).get('rising')
+    
+    if top_queries is not None and not top_queries.empty:
+        print("\n  Top Related Queries:")
+        print(top_queries)
+    else:
+        print("\n  &gt; No 'Top' related queries were found or could be parsed.")
+        
+    if rising_queries is not None and not rising_queries.empty:
+        print("\n  Rising Related Queries:")
+        print(rising_queries)
+    else:
+        print("\n  &gt; No 'Rising' related queries were found or could be parsed.")</code></pre>
+<ol start="4" type="1">
+<li>Interpreting the New Results</li>
+</ol>
+<p>When you run this new script, you will likely see a similar output to what you got before, but with more descriptive messages: Plaintext</p>
+<p>Fetching for: ‘custom furniture’ &gt; Caught IndexError. Google’s API response is not in the expected format for ‘custom furniture’. … (and so on for other keywords)</p>
+<p>At the end, the results section will clearly state that no data could be parsed.</p>
+<p>What to do now?</p>
+<pre><code>Wait for an Update: The most common solution is to wait for the pytrends developers to patch the library. You can check for updates periodically by running pip install --upgrade pytrends.
+
+Try Different Parameters: You can experiment by changing the timeframe. Sometimes a shorter timeframe like 'today 3-m' or 'now 7-d' might use a different API endpoint that isn't broken.
+
+Use the Website: For the time being, the most reliable way to get related queries is to go directly to the Google Trends website and search for your terms manually.</code></pre>
+<section id="e-commerce-platform-apis" class="level2">
+<h2 class="anchored" data-anchor-id="e-commerce-platform-apis">E-commerce Platform APIs</h2>
+</section>
+</section>
+<section id="google-trends-for-woodworking-demand-6" class="level1">
+<h1>Google Trends for woodworking demand</h1>
+<p>import pandas as pd from pytrends.request import TrendReq import time</p>
+<p>def analyze_woodworking_trends(): ““” Analyzes Google Trends for woodworking keywords.</p>
+<pre><code>This robust version anticipates potential errors from the pytrends library
+and handles them gracefully.
+"""
+pytrends = TrendReq(hl='en-US', tz=360)
+
+keywords = ['custom furniture', 'woodworking', 'handmade furniture', 
+           'live edge table', 'custom cabinets']
+
+# --- 1. Get Interest Over Time (this part usually works reliably) ---
+print("Fetching interest over time for all keywords...")
+try:
+    pytrends.build_payload(keywords, timeframe='today 12-m', geo='US')
+    trends_data = pytrends.interest_over_time()
+except Exception as e:
+    print(f"Could not fetch interest over time. Error: {e}")
+    trends_data = None
+
+# --- 2. Get Related Queries with Robust Error Handling ---
+related_queries_dict = {}
+print("\nFetching related queries for each keyword...")
+
+for keyword in keywords:
+    print(f"Fetching for: '{keyword}'")
+    time.sleep(2) # Increased delay to be safe
+    
+    try:
+        # Re-build payload for each keyword
+        pytrends.build_payload([keyword], timeframe='today 12-m', geo='US')
+        related_queries_dict[keyword] = pytrends.related_queries()
+    except IndexError:
+        # This is the specific error we are seeing.
+        print(f"  &gt; Caught IndexError. Google's API response is not in the expected format for '{keyword}'.")
+        related_queries_dict[keyword] = None # Mark as failed
+    except Exception as e:
+        # Catch any other potential errors
+        print(f"  &gt; An unexpected error occurred for '{keyword}': {e}")
+        related_queries_dict[keyword] = None # Mark as failed
+        
+return trends_data, related_queries_dict</code></pre>
+</section>
+<section id="run-the-analysis-and-display-results-safely-1" class="level1">
+<h1>— Run the analysis and display results safely —</h1>
+<p>trends_df, related_queries = analyze_woodworking_trends()</p>
+<p>if trends_df is not None: print(“— Interest Over Time —”) print(trends_df.tail()) else: print(“— No Interest Over Time data was fetched —”)</p>
+<p>print(“— Related Queries —”) if not related_queries: print(“No related queries could be fetched.”) else: for keyword, result in related_queries.items(): print(f”— Results for ‘{keyword}’ —“) if result is None: print(” &gt; No data returned due to an API parsing error.”) continue</p>
+<pre><code>    # Safely access 'top' and 'rising' queries
+    top_queries = result.get(keyword, {}).get('top')
+    rising_queries = result.get(keyword, {}).get('rising')
+    
+    if top_queries is not None and not top_queries.empty:
+        print("\n  Top Related Queries:")
+        print(top_queries)
+    else:
+        print("\n  &gt; No 'Top' related queries were found or could be parsed.")
+        
+    if rising_queries is not None and not rising_queries.empty:
+        print("\n  Rising Related Queries:")
+        print(rising_queries)
+    else:
+        print("\n  &gt; No 'Rising' related queries were found or could be parsed.")</code></pre>
+</section>
+<section id="etsy-api-for-handmadecustom-furniture-market" class="level1">
+<h1>Etsy API for handmade/custom furniture market</h1>
+<p>import requests</p>
+<p>def analyze_etsy_woodworking_market(api_key): “““Analyze woodworking market on Etsy”“”</p>
+<pre><code># Search for woodworking items
+url = "https://openapi.etsy.com/v3/application/listings/active"
+
+headers = {
+    'x-api-key': api_key,
+    'Content-Type': 'application/json'
+}
+
+params = {
+    'keywords': 'custom furniture woodworking',
+    'limit': 100,
+    'includes': 'Images,Shop,User',
+    'sort_on': 'score'
+}
+
+response = requests.get(url, headers=headers, params=params)
+listings = response.json()
+
+# Analyze pricing and demand indicators
+market_data = []
+for listing in listings.get('results', []):
+    market_data.append({
+        'title': listing.get('title'),
+        'price': listing.get('price', {}).get('amount'),
+        'currency': listing.get('price', {}).get('currency_code'),
+        'views': listing.get('views'),
+        'num_favorers': listing.get('num_favorers'),
+        'shop_name': listing.get('Shop', {}).get('shop_name'),
+        'creation_timestamp': listing.get('creation_timestamp')
+    })
+
+return market_data</code></pre>
+<section id="local-business-intelligence-1" class="level2">
+<h2 class="anchored" data-anchor-id="local-business-intelligence-1">Local Business Intelligence</h2>
+</section>
+</section>
+<section id="google-my-business-api-for-local-competition-analysis" class="level1">
+<h1>Google My Business API for local competition analysis</h1>
+<p>def analyze_local_woodworking_businesses(location, gmb_api_key): “““Find local woodworking businesses and their performance”“” import googlemaps</p>
+<pre><code>gmaps = googlemaps.Client(key=gmb_api_key)
+
+# Search for woodworking businesses
+search_terms = [
+    'custom furniture',
+    'woodworking shop',
+    'cabinet maker',
+    'furniture maker'
+]
+
+local_businesses = []
+
+for term in search_terms:
+    places = gmaps.places_nearby(
+        location=location,
+        radius=50000,  # 50km radius
+        keyword=term,
+        type='establishment'
+    )
+    
+    for place in places.get('results', []):
+        place_details = gmaps.place(
+            place_id=place['place_id'],
+            fields=['name', 'rating', 'user_ratings_total', 'website', 
+                   'formatted_phone_number', 'opening_hours', 'photos']
+        )
+        
+        local_businesses.append({
+            'name': place_details['result']['name'],
+            'rating': place_details['result'].get('rating'),
+            'review_count': place_details['result'].get('user_ratings_total'),
+            'website': place_details['result'].get('website'),
+            'search_term': term
+        })
+
+return local_businesses</code></pre>
+<section id="price-analysis-tools-1" class="level2">
+<h2 class="anchored" data-anchor-id="price-analysis-tools-1">Price Analysis Tools</h2>
+<p>import pandas as pd import matplotlib.pyplot as plt</p>
+<p>def analyze_pricing_data(market_data): “““Analyze pricing patterns in woodworking market”“”</p>
+<pre><code>df = pd.DataFrame(market_data)
+
+# Price analysis by category
+price_analysis = {
+    'avg_price': df['price'].mean(),
+    'median_price': df['price'].median(),
+    'price_range': {
+        'low': df['price'].quantile(0.25),
+        'high': df['price'].quantile(0.75)
+    },
+    'popular_price_points': df['price'].value_counts().head(10)
+}
+
+# Demand indicators
+demand_analysis = {
+    'avg_views': df['views'].mean(),
+    'avg_favorites': df['num_favorers'].mean(),
+    'high_demand_items': df.nlargest(10, 'views')[['title', 'price', 'views']]
+}
+
+return price_analysis, demand_analysis</code></pre>
+<p>def create_market_report(price_analysis, demand_analysis): “““Generate market analysis report”“”</p>
+<pre><code>report = f"""
+WOODWORKING MARKET ANALYSIS REPORT
+================================
+
+PRICING INSIGHTS:
+- Average Price: ${price_analysis['avg_price']:.2f}
+- Median Price: ${price_analysis['median_price']:.2f}
+- Price Range (25th-75th percentile): ${price_analysis['price_range']['low']:.2f} - ${price_analysis['price_range']['high']:.2f}
+
+DEMAND INDICATORS:
+- Average Views per Item: {demand_analysis['avg_views']:.0f}
+- Average Favorites per Item: {demand_analysis['avg_favorites']:.0f}
+
+TOP PERFORMING ITEMS:
+{demand_analysis['high_demand_items'].to_string()}
+"""
+
+return report</code></pre>
+</section>
+<section id="web-scraping-for-public-business-directories-1" class="level2">
+<h2 class="anchored" data-anchor-id="web-scraping-for-public-business-directories-1">Web Scraping for Public Business Directories</h2>
+</section>
+</section>
+<section id="scraping-yellow-pages-or-similar-business-directories-public-data" class="level1">
+<h1>Scraping Yellow Pages or similar business directories (public data)</h1>
+<p>import requests from bs4 import BeautifulSoup import time</p>
+<p>def scrape_business_directory(location, category=“furniture”): “““Scrape public business directory data”“”</p>
+<pre><code># This is for publicly available directory information
+base_url = "https://www.yellowpages.com/search"
+
+params = {
+    'search_terms': f'{category} woodworking',
+    'geo_location_terms': location
+}
+
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+}
+
+businesses = []
+
+try:
+    response = requests.get(base_url, params=params, headers=headers)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    
+    # Extract business information (adjust selectors based on site structure)
+    business_listings = soup.find_all('div', class_='result')
+    
+    for listing in business_listings:
+        name = listing.find('a', class_='business-name')
+        rating = listing.find('div', class_='rating')
+        
+        if name:
+            businesses.append({
+                'name': name.get_text().strip(),
+                'rating': rating.get_text().strip() if rating else 'N/A'
+            })
+    
+    time.sleep(2)  # Be respectful with requests
+    
+except Exception as e:
+    print(f"Error scraping directory: {e}")
+
+return businesses</code></pre>
+<section id="social-media-market-research-1" class="level2">
+<h2 class="anchored" data-anchor-id="social-media-market-research-1">Social Media Market Research</h2>
+</section>
+</section>
+<section id="using-official-apis-for-market-research" class="level1">
+<h1>Using official APIs for market research</h1>
+<p>def analyze_woodworking_social_trends(): “““Analyze social media trends for woodworking”“”</p>
+<pre><code># Instagram Hashtag Analysis (using official API)
+woodworking_hashtags = [
+    '#customfurniture', '#woodworking', '#handmade', 
+    '#liveedge', '#woodwork', '#furniture'
+]
+
+# YouTube Data API for woodworking content analysis
+def get_youtube_woodworking_data(api_key):
+    from googleapiclient.discovery import build
+    
+    youtube = build('youtube', 'v3', developerKey=api_key)
+    
+    search_response = youtube.search().list(
+        q='woodworking business custom furniture',
+        part='id,snippet',
+        maxResults=50,
+        type='video',
+        order='relevance'
+    ).execute()
+    
+    video_data = []
+    for item in search_response['items']:
+        video_data.append({
+            'title': item['snippet']['title'],
+            'description': item['snippet']['description'],
+            'published_at': item['snippet']['publishedAt']
+        })
+    
+    return video_data
+
+return woodworking_hashtags</code></pre>
+<section id="demand-forecasting-model-1" class="level2">
+<h2 class="anchored" data-anchor-id="demand-forecasting-model-1">Demand Forecasting Model</h2>
+<p>import pandas as pd from sklearn.linear_model import LinearRegression import numpy as np</p>
+<p>def create_demand_forecast(historical_data): “““Create demand forecast based on collected data”“”</p>
+<pre><code>df = pd.DataFrame(historical_data)
+df['date'] = pd.to_datetime(df['date'])
+df['month'] = df['date'].dt.month
+df['year'] = df['date'].dt.year
+
+# Features for demand prediction
+features = ['month', 'year', 'avg_price', 'search_volume']
+X = df[features]
+y = df['demand_indicator']  # Views, sales, etc.
+
+# Simple linear regression model
+model = LinearRegression()
+model.fit(X, y)
+
+# Forecast next 6 months
+future_months = []
+current_date = pd.Timestamp.now()
+
+for i in range(1, 7):
+    future_date = current_date + pd.DateOffset(months=i)
+    future_months.append({
+        'month': future_date.month,
+        'year': future_date.year,
+        'avg_price': df['avg_price'].mean(),  # Use historical average
+        'search_volume': df['search_volume'].mean()
+    })
+
+future_df = pd.DataFrame(future_months)
+forecast = model.predict(future_df[features])
+
+return forecast, future_df</code></pre>
+<p>def generate_business_insights(all_data): “““Generate actionable business insights”“”</p>
+<pre><code>insights = {
+    'optimal_price_range': None,
+    'high_demand_products': [],
+    'seasonal_trends': {},
+    'competitor_gaps': [],
+    'market_opportunities': []
+}
+
+# Analyze optimal pricing
+price_demand_correlation = np.corrcoef(all_data['prices'], all_data['demand'])
+
+# Identify market gaps
+# Analyze competitor offerings vs. market demand
+
+return insights</code></pre>
+</section>
+<section id="data-collection-automation-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-collection-automation-1">Data Collection Automation</h2>
+<p>import schedule import time from datetime import datetime</p>
+<p>class WoodworkingMarketResearch: def <strong>init</strong>(self): self.data_store = []</p>
+<pre><code>def daily_data_collection(self):
+    """Collect market data daily"""
+    
+    # Google Trends data
+    trends_data = analyze_woodworking_trends()
+    
+    # Local business data
+    local_data = analyze_local_woodworking_businesses("Your City, State", "API_KEY")
+    
+    # E-commerce data
+    etsy_data = analyze_etsy_woodworking_market("ETSY_API_KEY")
+    
+    # Combine and store data
+    daily_snapshot = {
+        'date': datetime.now(),
+        'trends': trends_data,
+        'local_businesses': local_data,
+        'ecommerce_data': etsy_data
+    }
+    
+    self.data_store.append(daily_snapshot)
+    
+    # Save to CSV
+    self.save_daily_report()
+
+def save_daily_report(self):
+    """Save collected data to CSV"""
+    if self.data_store:
+        df = pd.DataFrame(self.data_store)
+        filename = f"woodworking_market_data_{datetime.now().strftime('%Y%m%d')}.csv"
+        df.to_csv(filename, index=False)
+        print(f"Market data saved: {filename}")</code></pre>
+</section>
+</section>
+<section id="schedule-daily-data-collection" class="level1">
+<h1>Schedule daily data collection</h1>
+<p>researcher = WoodworkingMarketResearch() schedule.every().day.at(“09:00”).do(researcher.daily_data_collection)</p>
+</section>
+<section id="run-the-scheduler" class="level1">
+<h1>Run the scheduler</h1>
+<p>while True: schedule.run_pending() time.sleep(3600) # Check every hour</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

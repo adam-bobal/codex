@@ -1,0 +1,17 @@
+---
+project: marketing
+type: CSV
+category: data
+tags: automation
+description: day,type,message,image_url,post_time,price
+created: 2025-12-31T04:12:40.832282
+---
+
+day,type,message,image_url,post_time,price
+Monday,waterice_dailyflavor,Mango Madness Monday 🍧🥭,C:\Users\aboba\projects\fb-automations\images\waterice_dailyflavor\mon_mango.png,16:00,3.25
+Tuesday,waterice_dailyflavor,Tropical Tuesday - Pineapple 🍍 Water Ice,C:\Users\aboba\projects\fb-automations\images\waterice_dailyflavor\tues_tropical.png,16:00,2.99
+Wednesday,waterice_dailyflavor,Watermelon Wednesday 🍉,C:\Users\aboba\projects\fb-automations\images\waterice_dailyflavor\wed_watermelon.png,16:00,2.99
+Thursday,waterice_dailyflavor,Blueberry Blast Thursday 🫐,C:\Users\aboba\projects\fb-automations\images\waterice_dailyflavor\thur_rainbow.png,16:00,3.25
+Friday,waterice_dailyflavor,Fishy Friday - Candy Fish Water Ice 🐟,C:\Users\aboba\projects\fb-automations\images\waterice_dailyflavor\fri_fishy.png,16:00,3.25
+Saturday,waterice_dailyflavor,Strawberry Kiwi Swirl 🍓🥝,C:\Users\aboba\projects\fb-automations\images\waterice_dailyflavor\sat_strawkiwi.png,16:00,3.0
+Sunday,waterice_dailyflavor,Blueberry Sundae Sunday 🫐🍨,C:\Users\aboba\projects\fb-automations\images\waterice_dailyflavor\sunday_blueberry.png,16:00,3.5

@@ -1,0 +1,112 @@
+import os
+import base64
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+
+print("--- Script is starting ---") # <--- ADD THIS LINE
+
+# If modifying these scopes, delete the file token.json.
+SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
+
+def get_gmail_service():
+    """
+    Authenticates with the Gmail API and returns a service object.
+    """
+    creds = None
+    # The file token.json stores the user's access and refresh tokens, and is
+    # created automatically when the authorization flow completes for the first
+    # time.
+    if os.path.exists('token.json'):
+        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+    # If there are no (valid) credentials available, let the user log in.
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            # IMPORTANT: You must have a 'credentials.json' file downloaded from
+            # your Google Cloud project for this to work.
+            flow = InstalledAppFlow.from_client_secrets_file(
+                'credentials.json', SCOPES)
+            creds = flow.run_local_server(port=0)
+        # Save the credentials for the next run
+        with open('token.json', 'w') as token:
+            token.write(creds.to_json())
+    
+    try:
+        service = build('gmail', 'v1', credentials=creds)
+        return service
+    except HttpError as error:
+        print(f'An error occurred: {error}')
+        return None
+
+def download_attachments(service, user_id='me', query='has:attachment', download_dir='attachments'):
+    """
+    Searches for messages with attachments and downloads them.
+
+    Args:
+        service: Authorized Gmail API service instance.
+        user_id: User's email address. The special value 'me'
+        can be used to indicate the authenticated user.
+        query: String used to filter messages. For example, 'from:user@example.com'
+        or 'has:attachment'.
+        download_dir: The directory to download attachments to.
+    """
+    try:
+        # Search for messages that match the query
+        response = service.users().messages().list(userId=user_id, q=query).execute()
+        messages = []
+        if 'messages' in response:
+            messages.extend(response['messages'])
+
+        # Handle pagination if there are many results
+        while 'nextPageToken' in response:
+            page_token = response['nextPageToken']
+            response = service.users().messages().list(userId=user_id, q=query,
+                                                     pageToken=page_token).execute()
+            if 'messages' in response:
+                messages.extend(response['messages'])
+
+        print(f"Found {len(messages)} messages with attachments.")
+
+        # Create download directory if it doesn't exist
+        if not os.path.exists(download_dir):
+            os.makedirs(download_dir)
+
+        # Iterate through each message
+        for message in messages:
+            msg = service.users().messages().get(userId=user_id, id=message['id']).execute()
+            payload = msg.get('payload', {})
+            parts = payload.get('parts', [])
+
+            for part in parts:
+                # Check if the part is an attachment
+                if part.get('filename'):
+                    filename = part['filename']
+                    attachment_id = part['body'].get('attachmentId')
+                    
+                    if attachment_id:
+                        # Get the attachment data
+                        attachment = service.users().messages().attachments().get(
+                            userId=user_id, messageId=message['id'], id=attachment_id).execute()
+                        
+                        # Decode the base64url encoded data
+                        file_data = base64.urlsafe_b64decode(attachment['data'].encode('UTF-8'))
+                        
+                        # Save the file
+                        path = os.path.join(download_dir, filename)
+                        with open(path, 'wb') as f:
+                            f.write(file_data)
+                        print(f'Successfully downloaded attachment: {filename}')
+
+    except HttpError as error:
+        print(f'An error occurred: {error}')
+
+if __name__ == '__main__':
+    gmail_service = get_gmail_service()
+    if gmail_service:
+        # You can customize the query here. For example, to only get PDFs:
+        # 'has:attachment filename:pdf'
+        download_attachments(gmail_service, query='has:attachment filename:pdf')
