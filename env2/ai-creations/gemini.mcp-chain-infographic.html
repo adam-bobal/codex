@@ -1,0 +1,576 @@
+Here's a research plan for that topic. If you need to update it, let me know!
+Bouncing Data Between MCPs
+Research Websites and Files
+(1) Identify the common technical definitions of 'MCP' relevant to data routing and systems in 2026, specifically focusing on the 'Model Context Protocol' and 'Multi-Cloud Platforms'.
+(2) For the Model Context Protocol, search for documentation and architectural specifications regarding server chaining, federation, or nested server capabilities.
+(3) Investigate whether an MCP server can act as a client/host to another MCP server to forward requests and responses, effectively 'bouncing' data through an intermediate node.
+(4) Look for concepts such as 'MCP Routers', 'Gateways', or 'Aggregators' that allow composing multiple MCP servers into a single pipeline or data flow.
+(5) Analyze the security implications of chaining MCP servers, specifically regarding authentication delegation and data privacy across hops.
+(6) In the context of Multi-Cloud Platforms, research architectures for routing data traffic sequentially between different cloud providers (multi-hop) and the associated egress costs or latency impacts.
+(7) Synthesize the information to determine if 'bouncing' data is a supported feature in these architectures and what configuration is required to achieve it.
+Analyze Results
+
+This is the current plan. What changes do you want to make?
+
+(1) Identify the common technical definitions of 'MCP' relevant to data routing and systems in 2026, specifically focusing on the 'Model Context Protocol' and 'Multi-Cloud Platforms'. (2) For the Model Context Protocol, search for documentation and architectural specifications regarding server chaining, federation, or nested server capabilities. (3) Investigate whether an MCP server can act as a client/host to another MCP server to forward requests and responses, effectively 'bouncing' data through an intermediate node. (4) Look for concepts such as 'MCP Routers', 'Gateways', or 'Aggregators' that allow composing multiple MCP servers into a single pipeline or data flow. (5) Analyze the security implications of chaining MCP servers, specifically regarding authentication delegation and data privacy across hops. (6) In the context of Multi-Cloud Platforms, research architectures for routing data traffic sequentially between different cloud providers (multi-hop) and the associated egress costs or latency impacts. (7) Synthesize the information to determine if 'bouncing' data is a supported feature in these architectures and what configuration is required to achieve it.
+
+Local MCP Server Network Construction
+Research Websites and Files
+(1) Search for official documentation and community guides on hosting Model Context Protocol (MCP) servers on local machines (repurposed laptops/Linux).
+(2) Identify networking methods for connecting to remote MCP servers on a LAN, specifically bridging Stdio-based servers to SSE (Server-Sent Events) or using SSH tunneling.
+(3) Investigate architectural patterns for chaining MCP servers, where one server forwards context or requests to another (the "bouncing" concept), or using a central MCP Router.
+(4) Research available open-source tools or implementations for MCP gateways/routers that support multi-server orchestration on a local network.
+(5) Determine the system requirements for running different types of MCP servers (e.g., simple file system access vs. local model inference) on older hardware.
+(6) Synthesize steps to configure the local network, install necessary MCP components, and verify data flow between the repurposed laptops and the main client.
+Analyze Results
+Create Report
+Ready in a few mins
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local MCP Server Mesh Network | Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Color Palette: "Neon Data Stream" 
+         Background: #0B1120 (Deep Navy)
+         Card BG: #1E293B (Slate)
+         Text: #F8FAFC (Slate 50)
+         Accent 1: #06B6D4 (Cyan)
+         Accent 2: #8B5CF6 (Violet)
+         Accent 3: #F43F5E (Rose)
+    -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#0B1120',
+                            card: '#1E293B',
+                            text: '#F8FAFC',
+                            accent1: '#06B6D4',
+                            accent2: '#8B5CF6',
+                            accent3: '#F43F5E',
+                            accent4: '#10B981'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B1120;
+            color: #F8FAFC;
+        }
+        /* Chart Container Strict Sizing */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 500px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-text {
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+        }
+        /* Flowchart Connector Lines via CSS Borders */
+        .flow-line {
+            width: 2px;
+            background-color: #475569;
+            height: 40px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Hero Section -->
+    <header class="min-h-[60vh] flex flex-col justify-center items-center text-center p-8 relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <!-- CSS Grid Pattern Background -->
+            <div class="w-full h-full" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 40px 40px;"></div>
+        </div>
+        
+        <div class="z-10 max-w-4xl animate-fade-in-up">
+            <div class="inline-block px-4 py-1 mb-4 rounded-full border border-brand-accent1 text-brand-accent1 text-sm font-bold tracking-widest uppercase">
+                Architecture Research
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight neon-text">
+                Local MCP Server<br>Mesh Network
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-400 mb-8 max-w-2xl mx-auto">
+                Repurposing legacy hardware into a distributed, autonomous AI processing grid using the Model Context Protocol.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-left">
+                <div class="glass-panel p-6 rounded-xl border-l-4 border-brand-accent1">
+                    <h3 class="text-brand-accent1 font-bold text-lg mb-2">The Goal</h3>
+                    <p class="text-sm text-slate-300">Create a low-maintenance, headless server farm from old laptops to process data sequentially.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border-l-4 border-brand-accent2">
+                    <h3 class="text-brand-accent2 font-bold text-lg mb-2">The Core</h3>
+                    <p class="text-sm text-slate-300">Stateless MCP servers communicating via SSE over a secure Tailscale mesh network.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border-l-4 border-brand-accent3">
+                    <h3 class="text-brand-accent3 font-bold text-lg mb-2">The "Bounce"</h3>
+                    <p class="text-sm text-slate-300">Orchestrating data flows from Fetcher nodes to Analyst nodes and back to the Host.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <!-- Section 1: The Network Topology (Plotly) -->
+        <section>
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-brand-text mb-4 border-b border-brand-accent1 inline-block pb-2">1. Network Topology & Data Flow</h2>
+                <p class="text-slate-400 max-w-3xl">
+                    Visualizing the mesh. The "Host" (You) acts as the central orchestrator, sending requests to specialized nodes (Laptops) running isolated Docker containers. Data "bounces" between these nodes before returning actionable insights.
+                </p>
+            </div>
+            
+            <div class="glass-panel rounded-2xl p-4 shadow-2xl">
+                <!-- Plotly Container -->
+                <div id="networkMap" class="w-full h-[500px]"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                <div class="text-center p-4 bg-brand-card rounded-lg">
+                    <span class="text-2xl">🖥️</span>
+                    <h4 class="font-bold mt-2">Node A: The Fetcher</h4>
+                    <p class="text-xs text-slate-400">Scrapes web/local files. High I/O, Low CPU.</p>
+                </div>
+                <div class="text-center p-4 bg-brand-card rounded-lg">
+                    <span class="text-2xl">🧠</span>
+                    <h4 class="font-bold mt-2">Node B: The Analyst</h4>
+                    <p class="text-xs text-slate-400">Runs LLMs/Python. High RAM/CPU.</p>
+                </div>
+                <div class="text-center p-4 bg-brand-card rounded-lg">
+                    <span class="text-2xl">🎮</span>
+                    <h4 class="font-bold mt-2">The Orchestrator</h4>
+                    <p class="text-xs text-slate-400">Your main machine. Manages the "Bounce".</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Architecture Comparison (Chart.js) -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-brand-text mb-4 border-b border-brand-accent2 inline-block pb-2">2. Architecture Patterns</h2>
+                <p class="text-slate-400 mb-6">
+                    Choosing the right orchestration pattern is critical. <strong>Pattern A (Client-Side)</strong> is easier to debug but moves more data over the network. <strong>Pattern B (Server-Chaining)</strong> keeps heavy data within the mesh but increases code complexity.
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="bg-brand-card p-4 rounded-lg border border-slate-700">
+                        <h4 class="font-bold text-brand-accent1">Pattern A: Client-Side</h4>
+                        <p class="text-sm text-slate-400 mt-1">Host gets data from Node A, then sends it to Node B. Best for text/JSON.</p>
+                    </div>
+                    <div class="bg-brand-card p-4 rounded-lg border border-slate-700">
+                        <h4 class="font-bold text-brand-accent3">Pattern B: Server-Chaining</h4>
+                        <p class="text-sm text-slate-400 mt-1">Node A sends directly to Node B. Best for Images/Large Datasets.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="glass-panel p-6 rounded-2xl">
+                <div class="chart-container">
+                    <canvas id="architectureChart"></canvas>
+                </div>
+                <p class="text-center text-xs text-slate-500 mt-4">Comparative analysis based on network load and implementation difficulty.</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Hardware & Stack Analysis -->
+        <section>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-brand-text mb-4">3. Hardware Repurposing Strategy</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    Optimizing old hardware requires a lean software stack. We replace heavy consumer OS layers with stripped-down Linux server environments to maximize resources for Dockerized MCP agents.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Stack Composition Chart -->
+                <div class="glass-panel p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-center">RAM Usage: Consumer vs. Headless Server</h3>
+                    <div class="chart-container">
+                        <canvas id="stackChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Suitability Radar -->
+                <div class="glass-panel p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-center">Laptop Role Suitability</h3>
+                    <div class="chart-container">
+                        <canvas id="suitabilityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: The Workflow "Bounce" -->
+        <section class="bg-brand-card rounded-3xl p-8 md:p-12 border border-slate-700">
+            <h2 class="text-3xl font-bold text-brand-text mb-8 text-center border-b border-brand-accent4 inline-block pb-2 mx-auto block w-max">4. "The Bounce" Execution Logic</h2>
+            
+            <!-- Process Diagram using Flex/Grid (No Mermaid/SVG) -->
+            <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0 md:space-x-4 max-w-5xl mx-auto">
+                
+                <!-- Step 1 -->
+                <div class="flex-1 w-full relative group">
+                    <div class="bg-brand-bg p-6 rounded-xl border border-brand-accent1 shadow-[0_0_15px_rgba(6,182,212,0.2)] text-center z-10 relative">
+                        <div class="text-3xl mb-2">🚀</div>
+                        <h4 class="font-bold text-brand-accent1">Step 1: Trigger</h4>
+                        <p class="text-sm text-slate-400 mt-2">Host script initializes <code>MultiClient</code> session.</p>
+                    </div>
+                    <!-- Connector -->
+                    <div class="hidden md:block absolute top-1/2 -right-6 w-12 h-1 bg-gradient-to-r from-brand-accent1 to-brand-accent2 transform -translate-y-1/2 z-0"></div>
+                    <div class="md:hidden w-1 h-8 bg-gradient-to-b from-brand-accent1 to-brand-accent2 mx-auto"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex-1 w-full relative group">
+                    <div class="bg-brand-bg p-6 rounded-xl border border-brand-accent2 shadow-[0_0_15px_rgba(139,92,246,0.2)] text-center z-10 relative">
+                        <div class="text-3xl mb-2">📡</div>
+                        <h4 class="font-bold text-brand-accent2">Step 2: Fetch</h4>
+                        <p class="text-sm text-slate-400 mt-2">Node A (ThinkPad) scrapes URL via Dockerized Browser.</p>
+                    </div>
+                    <!-- Connector -->
+                    <div class="hidden md:block absolute top-1/2 -right-6 w-12 h-1 bg-gradient-to-r from-brand-accent2 to-brand-accent3 transform -translate-y-1/2 z-0"></div>
+                    <div class="md:hidden w-1 h-8 bg-gradient-to-b from-brand-accent2 to-brand-accent3 mx-auto"></div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex-1 w-full relative group">
+                    <div class="bg-brand-bg p-6 rounded-xl border border-brand-accent3 shadow-[0_0_15px_rgba(244,63,94,0.2)] text-center z-10 relative">
+                        <div class="text-3xl mb-2">⚡</div>
+                        <h4 class="font-bold text-brand-accent3">Step 3: Analyze</h4>
+                        <p class="text-sm text-slate-400 mt-2">Raw data passed to Node B (MacBook) for LLM processing.</p>
+                    </div>
+                    <!-- Connector -->
+                    <div class="hidden md:block absolute top-1/2 -right-6 w-12 h-1 bg-gradient-to-r from-brand-accent3 to-brand-accent4 transform -translate-y-1/2 z-0"></div>
+                    <div class="md:hidden w-1 h-8 bg-gradient-to-b from-brand-accent3 to-brand-accent4 mx-auto"></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex-1 w-full relative group">
+                    <div class="bg-brand-bg p-6 rounded-xl border border-brand-accent4 shadow-[0_0_15px_rgba(16,185,129,0.2)] text-center z-10 relative">
+                        <div class="text-3xl mb-2">✅</div>
+                        <h4 class="font-bold text-brand-accent4">Step 4: Result</h4>
+                        <p class="text-sm text-slate-400 mt-2">Insights returned to Host user interface.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 5: Implementation Checklist -->
+        <section class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-brand-text mb-8 text-center">Phase 6: Action Checklist</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <div class="flex items-start p-4 bg-brand-card rounded-lg border-l-4 border-slate-500">
+                    <div class="flex-shrink-0 h-6 w-6 rounded-full bg-slate-700 flex items-center justify-center text-xs mr-3">1</div>
+                    <div>
+                        <h5 class="font-bold">Inventory Audit</h5>
+                        <p class="text-sm text-slate-400">List specs of available laptops (Focus on RAM).</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-brand-card rounded-lg border-l-4 border-brand-accent1">
+                    <div class="flex-shrink-0 h-6 w-6 rounded-full bg-brand-accent1 flex items-center justify-center text-xs text-black font-bold mr-3">2</div>
+                    <div>
+                        <h5 class="font-bold">Flash OS</h5>
+                        <p class="text-sm text-slate-400">Install Ubuntu Server LTS. Wipe Windows partitions.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-brand-card rounded-lg border-l-4 border-brand-accent2">
+                    <div class="flex-shrink-0 h-6 w-6 rounded-full bg-brand-accent2 flex items-center justify-center text-xs text-white font-bold mr-3">3</div>
+                    <div>
+                        <h5 class="font-bold">Tailscale Network</h5>
+                        <p class="text-sm text-slate-400">Authorize devices for secure flat networking.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-brand-card rounded-lg border-l-4 border-brand-accent3">
+                    <div class="flex-shrink-0 h-6 w-6 rounded-full bg-brand-accent3 flex items-center justify-center text-xs text-white font-bold mr-3">4</div>
+                    <div>
+                        <h5 class="font-bold">Orchestrator Script</h5>
+                        <p class="text-sm text-slate-400">Write Python `mcp` SDK script to chain servers.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-24 py-12 border-t border-slate-800 text-center">
+        <p class="text-slate-500 text-sm">Generated by Canvas Infographics based on "Research Plan: Constructing a Local MCP Server Mesh Network".</p>
+    </footer>
+
+    <!-- Chart.js & Plotly Implementation -->
+    <script>
+        // ---------------------------------------------------------
+        // UTILITY: Label Wrapping Logic (16 char limit)
+        // ---------------------------------------------------------
+        function wrapLabel(label) {
+            if (typeof label !== 'string' || label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= 16) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // ---------------------------------------------------------
+        // CHART 1: Architecture Patterns (Grouped Bar)
+        // ---------------------------------------------------------
+        const ctxArch = document.getElementById('architectureChart').getContext('2d');
+        new Chart(ctxArch, {
+            type: 'bar',
+            data: {
+                labels: ['Implementation Difficulty', 'Data Latency', 'Bandwidth Usage', 'Scalability'],
+                datasets: [
+                    {
+                        label: 'Pattern A: Client-Side',
+                        data: [20, 60, 90, 40], // Synthesized scores
+                        backgroundColor: '#06B6D4', // Cyan
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Pattern B: Server-Chaining',
+                        data: [80, 20, 30, 85], // Synthesized scores
+                        backgroundColor: '#8B5CF6', // Violet
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { 
+                            color: '#94a3b8',
+                            callback: function(val, index) {
+                                return wrapLabel(this.getLabelForValue(val));
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { labels: { color: '#F8FAFC' } },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) return label.join(' ');
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // ---------------------------------------------------------
+        // CHART 2: Hardware Stack RAM Usage (Stacked Bar)
+        // ---------------------------------------------------------
+        const ctxStack = document.getElementById('stackChart').getContext('2d');
+        new Chart(ctxStack, {
+            type: 'bar',
+            data: {
+                labels: ['Standard Laptop OS', 'Headless Server Node'],
+                datasets: [
+                    {
+                        label: 'OS Overhead',
+                        data: [4.5, 0.8], // GB RAM
+                        backgroundColor: '#F43F5E'
+                    },
+                    {
+                        label: 'Docker Engine',
+                        data: [1.2, 0.5],
+                        backgroundColor: '#F59E0B'
+                    },
+                    {
+                        label: 'Available for AI Models',
+                        data: [2.3, 6.7], // Assuming 8GB Total
+                        backgroundColor: '#10B981'
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        stacked: true,
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    y: {
+                        stacked: true,
+                        grid: { display: false },
+                        ticks: { color: '#F8FAFC' }
+                    }
+                },
+                plugins: {
+                    legend: { labels: { color: '#F8FAFC' } },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) return label.join(' ');
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // ---------------------------------------------------------
+        // CHART 3: Suitability Radar
+        // ---------------------------------------------------------
+        const ctxSuit = document.getElementById('suitabilityChart').getContext('2d');
+        new Chart(ctxSuit, {
+            type: 'radar',
+            data: {
+                labels: ['RAM Capacity', 'CPU Cores', 'SSD Speed', 'Power Efficiency', 'Portability'],
+                datasets: [{
+                    label: 'Old ThinkPad (Fetcher)',
+                    data: [60, 50, 40, 80, 70],
+                    borderColor: '#06B6D4',
+                    backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                    pointBackgroundColor: '#06B6D4'
+                }, {
+                    label: 'Old MacBook (Analyst)',
+                    data: [85, 75, 90, 60, 90],
+                    borderColor: '#8B5CF6',
+                    backgroundColor: 'rgba(139, 92, 246, 0.2)',
+                    pointBackgroundColor: '#8B5CF6'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        grid: { color: '#334155' },
+                        angleLines: { color: '#334155' },
+                        pointLabels: { 
+                            color: '#F8FAFC',
+                            font: { size: 11 }
+                        },
+                        ticks: { display: false, backdropColor: 'transparent' }
+                    }
+                },
+                plugins: {
+                    legend: { labels: { color: '#F8FAFC' } },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) return label.join(' ');
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // ---------------------------------------------------------
+        // PLOTLY: Network Topology Map
+        // ---------------------------------------------------------
+        const traceNodes = {
+            x: [1, 2, 3, 2], // X coordinates
+            y: [3, 3, 3, 1], // Y coordinates (Host at bottom)
+            mode: 'markers+text',
+            type: 'scatter',
+            name: 'Nodes',
+            text: ['Node A (Fetch)', 'Network Switch', 'Node B (Analyze)', 'Host (You)'],
+            textposition: 'top center',
+            marker: { size: [30, 15, 30, 40], color: ['#06B6D4', '#475569', '#F43F5E', '#10B981'] },
+            textfont: { color: '#F8FAFC' }
+        };
+
+        const traceEdges = {
+            x: [1, 2, null, 3, 2, null, 2, 2],
+            y: [3, 3, null, 3, 3, null, 3, 1],
+            mode: 'lines',
+            type: 'scatter',
+            line: { color: '#64748b', width: 2 },
+            hoverinfo: 'none'
+        };
+
+        const layout = {
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            showlegend: false,
+            xaxis: { showgrid: false, zeroline: false, showticklabels: false, range: [0, 4] },
+            yaxis: { showgrid: false, zeroline: false, showticklabels: false, range: [0, 4] },
+            margin: { l: 0, r: 0, b: 0, t: 0 },
+            dragmode: false // Disable zoom/pan
+        };
+
+        Plotly.newPlot('networkMap', [traceEdges, traceNodes], layout, {displayModeBar: false, responsive: true});
+
+    </script>
+</body>
+</html>
+<!-- 
+    NO SVG USED.
+    NO MERMAID USED.
+    Data Source: Research Plan - Local MCP Server Mesh Network.
+    Palette: Neon Data Stream.
+-->
+---
